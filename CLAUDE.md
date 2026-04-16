@@ -31,7 +31,7 @@ or individually as the user requests.
 
 ---
 
-### 1. `jd-keyword-extractor`
+### 1. `keywords-extracting`
 **What it does:** Parses a job description and maps every keyword against the
 candidate's CV. Identifies exact matches, partial matches (rewrites with high ROI),
 and missing required keywords. Produces a prioritized action list.
@@ -42,24 +42,24 @@ Its output — the keyword map — feeds directly into the CV and cover letter s
 **Inputs:** Job description (text/PDF/URL) + candidate CV (text/PDF)
 **Output:** Structured keyword map with counts, match status, and recommended actions
 
-**Skill location:** `jd-keyword-extractor-skill/SKILL.md`
+**Skill location:** `keywords-extracting-skill/SKILL.md`
 
 ---
 
-### 2. `cv-template`
+### 2. `cv-creating`
 **What it does:** Rewrites the candidate's CV content to integrate JD keywords,
 strengthen bullets with action verbs and measurable outcomes, then renders the
 result as a styled A4 PDF matching the reference design (two-column layout,
 teal `#4A7FA5` accents, Helvetica, sidebar contact block).
 
 **When to use:** When the user wants a new or updated CV as a PDF. Ideally run
-after `jd-keyword-extractor` so keywords are already mapped.
+after `keywords-extracting` so keywords are already mapped.
 
 **Inputs:** Candidate CV content + job description (or keyword map from step 1)
 **Output:** `/mnt/user-data/outputs/cv_output.pdf`
 
-**Design reference:** `cv-template-skill/assets/design-reference.pdf`
-**Skill location:** `cv-template-skill/SKILL.md`
+**Design reference:** `cv-creating-skill/assets/design-reference.pdf`
+**Skill location:** `cv-creating-skill/SKILL.md`
 
 **Hard constraints:**
 - Never fabricate skills or experience
@@ -68,12 +68,12 @@ after `jd-keyword-extractor` so keywords are already mapped.
 
 ---
 
-### 3. `cover-letter`
+### 3. `cover-letter-creating`
 **What it does:** Writes a tailored cover letter grounded in the candidate's real
 CV experiences, maps each paragraph to a JD keyword, and renders it as a styled
 A4 PDF (centered serif header, horizontal rule, justified body, black and white).
 
-**When to use:** When the user wants a cover letter PDF. Run after `jd-keyword-extractor`
+**When to use:** When the user wants a cover letter PDF. Run after `keywords-extracting`
 for best results — the keyword map tells you which experiences to lead with and
 which JD terms to mirror.
 
@@ -81,8 +81,8 @@ which JD terms to mirror.
 role title, start date, company address)
 **Output:** `/mnt/user-data/outputs/cover_letter.pdf`
 
-**Design reference:** `cover-letter-skill/assets/design-reference.pdf`
-**Skill location:** `cover-letter-skill/SKILL.md`
+**Design reference:** `cover-letter-creating-skill/assets/design-reference.pdf`
+**Skill location:** `cover-letter-creating-skill/SKILL.md`
 
 **Hard constraints:**
 - Every claim in the letter must map to a real CV entry
@@ -91,13 +91,13 @@ role title, start date, company address)
 
 ---
 
-### 4. `ats-score`
+### 4. `ats-calculating`
 **What it does:** Reads the CV and/or cover letter PDFs from the outputs directory,
 extracts their text, compares against the JD across five weighted dimensions
 (keyword match 35%, required skills 30%, seniority alignment 15%, ATS structure 10%,
 culture alignment 10%), and produces a scored report with prioritized improvement tips.
 
-**When to use:** After `cv-template` and/or `cover-letter` have produced their outputs.
+**When to use:** After `cv-creating` and/or `cover-letter-creating` have produced their outputs.
 Also usable standalone on any uploaded CV + JD.
 
 **Inputs:** `/mnt/user-data/outputs/cv_output.pdf` and/or `cover_letter.pdf` + job description
@@ -110,7 +110,7 @@ Also usable standalone on any uploaded CV + JD.
 - 🔴 40–54% — Weak match, high ATS rejection risk
 - ⛔ <40%   — Poor match, major rework needed
 
-**Skill location:** `ats-score-skill/SKILL.md`
+**Skill location:** `ats-calculating-skill/SKILL.md`
 
 ---
 
@@ -120,23 +120,23 @@ Also usable standalone on any uploaded CV + JD.
 User provides: CV + Job Description
         │
         ▼
-[1] jd-keyword-extractor
+[1] keywords-extracting
     → Keyword map: matches, partials, gaps, priorities
         │
         ▼
-[2] cv-template
+[2] cv-creating
     → cv_output.pdf (ATS-optimized, designed)
         │
         ▼
-[3] cover-letter
+[3] cover-letter-creating
     → cover_letter.pdf (tailored, designed)
         │
         ▼
-[4] ats-score
+[4] ats-calculating
     → Score report + improvement tips
         │
         ▼
-    Iterate on tips → re-run cv-template or cover-letter as needed
+    Iterate on tips → re-run cv-creating or cover-letter-creating as needed
 ```
 
 ---
@@ -145,12 +145,12 @@ User provides: CV + Job Description
 
 | User has… | Start with… |
 |---|---|
-| CV only, no JD | `cv-template` to clean up and design; skip keyword steps |
+| CV only, no JD | `cv-creating` to clean up and design; skip keyword steps |
 | JD only | Ask for CV before proceeding |
-| CV + JD, wants strategy first | `jd-keyword-extractor` |
-| CV + JD, wants documents fast | `cv-template` → `cover-letter` (keyword extraction runs inside each) |
-| Already has CV/cover letter PDFs | `ats-score` directly |
-| Wants to score an existing CV | `ats-score` with uploaded PDF + JD |
+| CV + JD, wants strategy first | `keywords-extracting` |
+| CV + JD, wants documents fast | `cv-creating` → `cover-letter-creating` (keyword extraction runs inside each) |
+| Already has CV/cover letter PDFs | `ats-calculating` directly |
+| Wants to score an existing CV | `ats-calculating` with uploaded PDF + JD |
 
 ---
 
@@ -158,10 +158,10 @@ User provides: CV + Job Description
 
 | File | Written by | Read by |
 |---|---|---|
-| `/mnt/user-data/outputs/cv_output.pdf` | `cv-template` | `ats-score` |
-| `/mnt/user-data/outputs/cover_letter.pdf` | `cover-letter` | `ats-score` |
-| `/tmp/cv_text.txt` | `ats-score` (extraction) | `ats-score` |
-| `/tmp/cl_text.txt` | `ats-score` (extraction) | `ats-score` |
+| `/mnt/user-data/outputs/cv_output.pdf` | `cv-creating` | `ats-calculating` |
+| `/mnt/user-data/outputs/cover_letter.pdf` | `cover-letter-creating` | `ats-calculating` |
+| `/tmp/cv_text.txt` | `ats-calculating` (extraction) | `ats-calculating` |
+| `/tmp/cl_text.txt` | `ats-calculating` (extraction) | `ats-calculating` |
 
 ---
 
