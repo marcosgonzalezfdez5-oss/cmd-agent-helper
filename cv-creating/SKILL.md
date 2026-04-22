@@ -23,7 +23,7 @@ Read the reference cv.json at the start of every run then study its layout visua
 |---|---|
 | **Page size** | A4 |
 | **Margins** | ~14mm all sides |
-| **Layout** | Two-column: left sidebar ~30% + right main body ~70% |
+| **Layout** | Two-column: left sidebar ~25% + right main body ~75% |
 | **Accent color** | `#4A7FA5` (teal/steel blue) |
 | **Name** | 22–24pt, bold, teal, all-caps |
 | **Job title** | 11pt, teal, italic, directly under name |
