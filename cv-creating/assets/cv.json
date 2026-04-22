@@ -1,7 +1,7 @@
 {
   "personal_info": {
     "name": "Marcos Gonzalez Fernandez",
-    "headline": "AI Evaluation & Data Analytics | 600+ LLM Evals • Power BI",
+    "headline": "AI & Data Analytics | 600+ LLM Evals • Power BI",
     "location": "Leipzig, Germany",
     "phone": "+34 603786521",
     "email": "marcos.gonzalezfdez5@gmail.com",
@@ -9,6 +9,18 @@
   },
   "summary": "Analytical and detail-oriented Software Engineering graduate with international working and living experience in Mexico, Spain, Germany, Canada, and the Netherlands. Enjoys working in dynamic team environments, staying organized, and focusing on efficiency.",
   "experience": [
+    {
+      "title": "Junior IT Project Manager",
+      "company": "Stumpp Schuele & Somappa Springs Pvt. Ltd.",
+      "start_date": "2025-04",
+      "end_date": "Present",
+      "location": "Bangalore, India",
+      "description": [
+        "Developed and implemented a fully functional Visitor Management System using Python, SQL and Next.js, enabling efficient visitor registration and management, and communication and coordination across 20 plants in India",
+        "Designed and deplpoyed AI agent solutions that improved efficiency by 40%, optimizing workflows and reducing manual efforts",
+        "Collaborated with cross-functional teams to gather requirements, design system architecture, and ensure seamless integration with existing infrastructure"
+      ]
+    },
     {
       "title": "AI Model Evaluation Contractor",
       "company": "Browserbase",
@@ -84,7 +96,11 @@
       "Microsoft Excel",
       "Salesforce",
       "Tableau",
-      "SAP (basic)"
+      "SAP (basic)",
+      "Git",
+      "Claude Skills",
+      "Browserbase Evals",
+      "React"
     ],
     "programming": [
       "SQL",
