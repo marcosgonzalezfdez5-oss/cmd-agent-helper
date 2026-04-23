@@ -1,0 +1,66 @@
+{
+  "overall": 81,
+  "keyword_match": {
+    "score": 93.3,
+    "matched": [
+      "Power BI",
+      "Python",
+      "SQL",
+      "AI agent",
+      "Next.js",
+      "Salesforce",
+      "evaluation",
+      "dashboard",
+      "cross-functional",
+      "SAP",
+      "Git",
+      "TypeScript",
+      "JavaScript",
+      "data analytics"
+    ],
+    "missing": [
+      "digital transformation"
+    ],
+    "total": 15
+  },
+  "required_skills": {
+    "score": 60.0,
+    "matched": [
+      "Python",
+      "SQL",
+      "Power BI"
+    ],
+    "missing": [
+      "data analysis",
+      "project management"
+    ],
+    "total": 5
+  },
+  "seniority": {
+    "score": 85.0,
+    "note": "Entry-level role; candidate is a recent graduate with relevant internship and working student experience."
+  },
+  "structure": {
+    "score": 100.0,
+    "signals_present": [
+      "experience section",
+      "education section",
+      "skills section",
+      "contact email",
+      "contact phone",
+      "consistent dates"
+    ]
+  },
+  "culture": {
+    "score": 75.0,
+    "matched": [
+      "international",
+      "cross-functional",
+      "detail-oriented"
+    ],
+    "missing": [
+      "collaborative"
+    ],
+    "total": 4
+  }
+}

@@ -2,7 +2,7 @@
 *.pdf
 
 # Ignore all JSON files
-*.json
+./cv-creating/assets/*.json
 
 # Ignore all JPG files
 *.jpg
