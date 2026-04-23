@@ -1,8 +1,8 @@
 .# Ignore all PDF files
 *.pdf
 
-# Ignore all JSON files
-./cv-creating/assets/*.json
+# Ignore candidate CV data
+cv-creating/assets/cv.json
 
 # Ignore all JPG files
 *.jpg
