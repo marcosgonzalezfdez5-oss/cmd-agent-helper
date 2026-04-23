@@ -121,6 +121,11 @@
       "activity": "Personal Investment Portfolio",
       "start_date": "2025-03",
       "description": "Independently managed a personal investment portfolio achieving over 20% cumulative return"
+    },
+    {
+      "activity": "AI Agent job applicator",
+      "start_date": "2026-03",
+      "description": "Developed a custom AI agent to automate job applications, including resume tailoring and cover letter generation, resulting in a 30% increase in interview invitations"
     }
   ]
 }
