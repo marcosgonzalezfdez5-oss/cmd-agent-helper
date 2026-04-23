@@ -23,43 +23,47 @@ PHONE    = "+34 603786521"
 EMAIL    = "marcos.gonzalezfdez5@gmail.com"
 LINKEDIN = "linkedin.com/in/marcos-gonzalez-fdez5/"
 
-COMPANY  = "Siemens Global Business Services"
-ADDRESS  = "Western Europe & Africa Hub, Germany"
-DATE_STR = "22 April 2026"
-ROLE     = "Junior Digitalization Consultant"
-START    = "By mutual agreement"
-SALUT    = "Hiring Team"
+COMPANY  = "BCG Platinion"
+ADDRESS  = "Cologne, Germany"
+DATE_STR = "23 April 2026"
+ROLE     = "AI and Agentic Systems Engineer"
+START    = "By agreement"
+SALUT    = "Leonie Kutschera Gross and Team"
 
 BODY = [
     (
-        "During my time at Carl Zeiss, I saw firsthand what it takes to turn a business process "
-        "problem into a deployed digital solution — from gathering stakeholder requirements during "
-        "a SAP-to-Salesforce migration, to building the Power BI KPI dashboard that made the "
-        "transformation measurable. That experience of bridging the gap between business needs and "
-        "technical delivery is precisely what drew me to Siemens GBS's Junior Digitalization "
-        "Consultant role in Digital Advisory."
+        "My path to this application runs through a practical question: when you deploy an autonomous "
+        "AI agent to coordinate operations across 20 manufacturing plants, how do you govern it at scale? "
+        "At Stumpp Schuele, I designed and deployed the LLM-based agentic AI solution that raised "
+        "operational efficiency by 40% across those facilities. Getting it right meant translating plant "
+        "managers' requirements into precise, testable agent specifications and defining the rule sets "
+        "that governed agent behavior from day one. Turning business intent into governed AI execution "
+        "is exactly what BCG Platinion builds into enterprise architectures, and it "
+        "is where I want to build expertise."
     ),
     (
-        "My profile covers both sides of what this role demands. On the analysis side, I have "
-        "documented business requirements, identified process inefficiencies, and translated them "
-        "into data-driven solutions — most recently cutting reporting cycle time by 50% at Carl "
-        "Zeiss by migrating manual SAP Analytics workflows to an automated Power BI dashboard. "
-        "On the AI side, I have deployed an AI agent solution that reduced operational overhead "
-        "by 40% across 20 manufacturing facilities, and completed over 600 structured evaluations "
-        "of GenAI systems through Browserbase — giving me a grounded, practical understanding of "
-        "where AI-driven automation creates genuine business value and where it fails."
+        "In parallel, I spent over two months at Browserbase conducting 600+ structured evaluations "
+        "of frontier LLM and agentic AI systems. The work goes beyond running benchmarks: it is "
+        "systematic observability analysis of where agent loops break, how tool use degrades under "
+        "edge cases, and where evaluation frameworks need to flag behavior that looks compliant but "
+        "is not. That grounded understanding of AI coding agent failure modes and governance "
+        "requirements maps directly to the evaluation and SDLC-wide coding agent frameworks BCG "
+        "Platinion builds for enterprise clients."
     ),
     (
-        "Siemens GBS's Digital Solutions portfolio — spanning GenAI, Agentic AI, Advanced "
-        "Analytics, and RPA — maps directly to the skills I am actively building. Your WEA Hub's "
-        "diversity (50+ nationalities across 14 countries) and my own multilingual, five-country "
-        "background make this an environment where I know I will contribute and grow quickly. "
-        "I am ready to support AI workshops, assist in business case development, and help "
-        "deliver digitalization initiatives from day one."
+        "What draws me to BCG Platinion specifically is the enterprise scale and the consulting "
+        "dimension. At Carl Zeiss, I learned that the hardest part of a digital transformation is "
+        "not the technology itself; it is communicating what the system does, and why it can be "
+        "trusted, to stakeholders across business and technical teams. BCG Platinion operates at "
+        "that intersection on every engagement. My multilingual background in Spanish, English (C1), "
+        "and German (B2), combined with experience across five countries, means I am comfortable "
+        "working in that kind of global, interdisciplinary environment. The direction toward "
+        "autonomous delivery architectures such as the Dark Software Factory is one I find "
+        "genuinely compelling."
     ),
     (
-        "I would welcome the opportunity to discuss how my analytical background and applied AI "
-        "experience can contribute to Siemens GBS's digitalization mission."
+        "I would welcome the opportunity to discuss how my experience in agentic AI deployment "
+        "and LLM evaluation can contribute to BCG Platinion's work."
     ),
 ]
 
@@ -103,14 +107,15 @@ base = ParagraphStyle(
     "base",
     fontName="Times-Roman",
     fontSize=11,
-    leading=16,
+    leading=14,
     spaceBefore=0,
-    spaceAfter=6,
+    spaceAfter=3,
     alignment=TA_LEFT,
 )
-just = ParagraphStyle("just", parent=base, alignment=TA_JUSTIFY, spaceBefore=10)
+just = ParagraphStyle("just", parent=base, alignment=TA_JUSTIFY, spaceBefore=6)
 bold_left = ParagraphStyle("bl", parent=base, fontName="Times-Bold")
 
+story.append(Paragraph("&nbsp;", base))
 story.append(Paragraph(COMPANY, base))
 story.append(Paragraph(ADDRESS, base))
 story.append(Paragraph(DATE_STR, base))
@@ -125,9 +130,9 @@ for para in BODY:
 
 story.append(Paragraph("&nbsp;", base))
 story.append(Paragraph("Warm regards,", base))
-story.append(Paragraph(f"<b>{NAME}</b>", base))
+story.append(Paragraph("Marcos Gonzalez Fernandez", base))
 
-body_h = body_top - 20 * mm
+body_h = body_top - 10 * mm
 frame = Frame(
     L_MARGIN, 20 * mm,
     CONT_W, body_h,

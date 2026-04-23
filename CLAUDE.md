@@ -23,12 +23,13 @@ When a user provides a CV and a job description, your default mode is:
 
 1. Extract and map keywords (what the JD wants vs. what the CV has)
 2. Calculate ATS score on the current CV first
-3. If ATS score is BELOW 75% → improve CV and re-evaluate
-4. If ATS score is 75% or HIGHER → generate final CV PDF + Cover Letter PDF
-5. Use the `humanize` skill before final delivery to improve natural writing tone
-6. Deliver final optimized application package
+3. If ATS score is BELOW 75% → NO MATCH, NO GOOD CHANCE
+4. If ATS score is 75% or HIGHER → improve wording only (do not invent new data) to further strengthen ATS performance
+5. Use the `humanize` skill to improve natural writing tone while preserving ATS compatibility
+6. Generate final CV PDF + Cover Letter PDF
+7. Deliver final optimized application package
 
-You can run any step in isolation if that's all the user needs.
+You can run any step in isolation if that is all the user needs.
 
 ---
 
@@ -46,6 +47,7 @@ candidate's CV. Identifies exact matches, partial matches (rewrites with high RO
 and missing required keywords. Produces a prioritized action list.
 
 **When to use:** Always run this FIRST when both a JD and a CV are available.
+
 Its output feeds directly into ATS scoring and optimization.
 
 **Inputs:** Job description (text/PDF/URL) + candidate CV (text/PDF)
@@ -75,10 +77,25 @@ The ATS score determines whether the system should proceed to final document cre
 
 **Logic Rule:**
 
-- If ATS score < 75% → improve CV first
-- If ATS score ≥ 75% → proceed to CV + Cover Letter generation
+- If ATS score < 75% → No match enough, no good chance
+- If ATS score ≥ 75% → improve wording only to increase ATS strength without adding new information
 
 Never skip this validation.
+
+Important:
+When the score is already 75% or above, do not invent new experience, skills,
+metrics, tools, or responsibilities.
+
+Only:
+
+- improve wording
+- strengthen action verbs
+- improve keyword alignment
+- improve phrasing for ATS readability
+- clarify existing achievements
+- improve recruiter readability
+
+Do not fabricate anything.
 
 **Inputs:** Candidate CV + Job Description
 
@@ -86,8 +103,8 @@ Never skip this validation.
 
 **Score scale:**
 
-- 🟢 85–98% — Strong match, likely to pass ATS
-- 🟡 75–84% — Good match, acceptable for final generation
+- 🟢 85–98% — Strong match, optimize wording and finalize
+- 🟡 75–84% — Good match, improve wording before final generation
 - 🟠 55–74% — Needs optimization before final generation
 - 🔴 40–54% — Weak match, major improvements needed
 - ⛔ <40%   — Poor match, heavy rewrite required
@@ -99,14 +116,25 @@ Never skip this validation.
 ### 3. `cv-creating`
 
 **What it does:** Rewrites the candidate's CV content to integrate JD keywords,
-strengthen bullets with action verbs and measurable outcomes, then renders the
-result as a styled A4 PDF matching the reference design.
+strengthen bullets with action verbs and measurable outcomes, and improve ATS
+performance without inventing new data.
 
-This step only happens AFTER ATS score reaches at least 75%.
+If ATS score is already 75% or higher, this step focuses only on wording
+optimization and stronger phrasing.
+
+Then the final content must pass through the `humanize` skill before PDF generation.
+
+The final humanized content is then passed to `gen_cv.py` to generate the PDF.
 
 **When to use:** Only after ATS validation passes.
 
 **Inputs:** Candidate CV + Job Description + ATS optimization priorities
+
+**Process:**
+
+1. Improve wording
+2. Use `humanize` skill
+3. Pass final text to `gen_cv.py`
 
 **Output:** `/mnt/user-data/outputs/cv_output.pdf`
 
@@ -118,7 +146,8 @@ This step only happens AFTER ATS score reaches at least 75%.
 
 - Never fabricate skills or experience
 - Every bullet must be truthful and verifiable
-- Keywords integrated naturally — no stuffing
+- Keywords integrated naturally
+- If ATS ≥ 75%, wording improvement only
 
 ---
 
@@ -128,11 +157,19 @@ This step only happens AFTER ATS score reaches at least 75%.
 CV experiences, maps each paragraph to a JD keyword, and renders it as a styled
 A4 PDF.
 
-This step only happens AFTER ATS score reaches at least 75%.
+Before PDF generation, the content must pass through the `humanize` skill.
+
+The final humanized content is then passed to `gen_cover_letter.py`.
 
 **When to use:** After ATS validation passes and after CV creation.
 
 **Inputs:** Candidate CV + Job Description + ATS priorities + letter details
+
+**Process:**
+
+1. Draft cover letter
+2. Use `humanize` skill
+3. Pass final text to `gen_cover_letter.py`
 
 **Output:** `/mnt/user-data/outputs/cover_letter.pdf`
 
@@ -143,8 +180,9 @@ This step only happens AFTER ATS score reaches at least 75%.
 **Hard constraints:**
 
 - Every claim must map to a real CV entry
-- Never mention skills the candidate doesn't have
+- Never mention skills the candidate does not have
 - No filler phrases
+- No fabricated content
 
 ---
 
@@ -163,13 +201,13 @@ It helps ensure:
 - less generic AI-generated language
 - stronger professional communication
 
-**When to use:** Always run this BEFORE final delivery of CV and Cover Letter.
+**When to use:** Always before final PDF generation.
 
-This is mandatory before sending the final files.
+This is mandatory before sending text to `gen_cv.py` or `gen_cover_letter.py`.
 
 **Inputs:** Final CV content + Cover Letter content
 
-**Output:** Humanized final content ready for PDF delivery
+**Output:** Humanized final content ready for PDF generation
 
 **Skill location:** `humanize-skill/SKILL.md`
 
@@ -190,26 +228,26 @@ User provides: CV + Job Description
         │
         ├── If score < 75%
         │       ▼
-        │   Improve CV content
-        │   Re-run ATS calculation
+        │   Say to user, match is beloow 75, no good chance
+        │ 
         │
         └── If score ≥ 75%
                 ▼
+        Improve wording only
+        (no new data, no fabrication)
+                │
+                ▼
 [3] cv-creating
-    → use hummanize skill
-    → pass text to gen_cv.py
-
+    → use humanize skill
+    → pass final text to gen_cv.py
     → cv_output.pdf
-
-        │
-        ▼
+                │
+                ▼
 [4] cover-letter-creating
-
-    → use hummanize skill
-    → pass text to gen_cover_letter.py
-
+    → use humanize skill
+    → pass final text to gen_cover_letter.py
     → cover_letter.pdf
-        │
-        ▼
+                │
+                ▼
 Final Delivery
     → CV PDF + Cover Letter PDF + ATS Summary

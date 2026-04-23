@@ -28,7 +28,7 @@ from reportlab.lib.units import mm
 from reportlab.pdfgen import canvas
 
 # ── Output ────────────────────────────────────────────────────────────────────
-OUT      = "cv_output.pdf"
+OUT      = "cv_Marcos_Gonzalez_Fernandez.pdf"
 PHOTO    = r"C:\Users\Marcos\Documents\Projects\cmd-agent-helper\cv-creating\assets\profile-pic.jpg"
 
 # ── Design tokens ─────────────────────────────────────────────────────────────
@@ -217,7 +217,7 @@ def draw_header(c, photo_path=None):
 
     c.setFont("Helvetica-Oblique", 8.5)
     c.setFillColor(colors.HexColor("#D0E8F5"))
-    c.drawString(name_x, name_y - 36, "AI & Data Analytics  |  Software Engineer")
+    c.drawString(name_x, name_y - 36, "AI & Agentic Systems  |  LLM Evaluation  |  Software Engineering")
 
     # ── Profile photo ─────────────────────────────────────────────────────────
     photo_r  = 17 * mm
@@ -266,11 +266,12 @@ def draw_header(c, photo_path=None):
 # ── CV Data ───────────────────────────────────────────────────────────────────
 
 SUMMARY = (
-    "Digitalization-focused Software Engineering graduate (First Class Honours) with hands-on experience "
-    "in AI-driven process optimization, business analysis, and digital solution deployment across global "
-    "enterprise environments. Conducted 600+ structured AI evaluations and delivered data analytics "
-    "solutions for cross-functional stakeholder teams. Combines strong analytical and communication skills "
-    "with multilingual fluency across four languages and international experience spanning five countries."
+    "Software Engineering graduate (First Class Honours, Lancaster University) with hands-on experience "
+    "in agentic AI deployment and LLM evaluation. Deployed AI agent solutions in enterprise environments; "
+    "conducted 600+ structured evaluations of frontier LLM and agentic AI systems using evaluation "
+    "frameworks and observability analysis across agent loops, tool use, and autonomous decision-making. "
+    "Proficient with Claude Code and MCP-based architectures; covers the full SDLC from requirements to "
+    "deployment. Fluent in English (C1) and German (B2), with international experience across five countries."
 )
 
 EXPERIENCE = [
@@ -280,9 +281,9 @@ EXPERIENCE = [
         "loc":     "Bangalore, India",
         "dates":   "Apr 2026 – Present",
         "bullets": [
-            "Led **stakeholder engagement** and **business requirements** gathering to design and deploy an **AI agent solution**, automating cross-plant workflows and improving operational efficiency by **40%** across 20 facilities",
-            "Identified **digitalization opportunities** and built a full-stack digital solution (Python, SQL, Next.js) enabling real-time **process management** and coordination across 20 manufacturing sites in India",
-            "Acted as **bridge between business and technical teams**, translating requirements into scalable digital solutions and supporting continuous improvement through structured feedback loops",
+            "Designed and deployed **LLM-based agentic AI** solutions automating cross-plant workflows through structured rule sets; improved operational efficiency by **40%** across 20 manufacturing facilities",
+            "Delivered a full-stack digital platform (Python, SQL, Next.js) across the complete **SDLC**: requirements analysis, architecture, deployment, and live process management across 20 plants",
+            "Translated business intent into precise **agent specifications** and led **cross-functional stakeholder** engagement to ensure compliant, scalable delivery",
         ],
     },
     {
@@ -291,8 +292,9 @@ EXPERIENCE = [
         "loc":     "Remote",
         "dates":   "Feb 2026 – Present",
         "bullets": [
-            "Conducted **600+ structured evaluations** of **GenAI** and frontier AI systems, assessing model behavior across business-relevant use cases including reasoning, **automation**, and decision-making",
-            "Delivered **analytical reports** identifying failure patterns and reliability gaps, directly informing AI quality improvements — demonstrating applied understanding of AI capabilities and limitations",
+            "Conducted **600+ structured evaluations** of frontier **LLM** and **agentic AI** systems, systematically assessing **agent loops**, tool use, reasoning, and autonomous decision-making across diverse use cases",
+            "Applied **evaluation frameworks** and **observability** analysis to identify edge cases, failure patterns, and reliability gaps in **AI-native architectures**; produced reports that directly informed AI quality improvements",
+            "Developed grounded, practical understanding of **AI coding agent** capabilities and **governance** requirements through large-scale, hands-on evaluation work",
         ],
     },
     {
@@ -301,9 +303,9 @@ EXPERIENCE = [
         "loc":     "Oberkochen, Germany",
         "dates":   "Nov 2024 – Aug 2025",
         "bullets": [
-            "Identified **process inefficiency** in manual reporting and led migration to a centralized **Power BI** dashboard, cutting reporting cycle time by **50%** across a global budgeting initiative",
+            "Identified reporting inefficiency and led migration to a centralized **Power BI** dashboard, cutting reporting cycle time by **50%** across a global budget tracking initiative",
             "Coordinated a team of 5 **cross-functional** interns, managing task prioritization, workload distribution, and delivery to project leadership",
-            "Designed **automated data pipelines** and analytics reports to support **strategic decision-making** across a global **digital transformation** programme",
+            "Designed **automated data pipelines** and analytics dashboards supporting **data-driven** decision-making across a global enterprise programme",
         ],
     },
     {
@@ -312,8 +314,8 @@ EXPERIENCE = [
         "loc":     "Oberkochen, Germany",
         "dates":   "Jun 2024 – Aug 2024",
         "bullets": [
-            "Contributed to **business analysis** efforts during a **SAP-to-Salesforce digital transformation**, developing a **Power BI** KPI dashboard to monitor Net Promoter Score and track process outcomes",
-            "Gathered and documented **stakeholder requirements**, managed platform access, and delivered **data-driven reports** to global project leadership",
+            "Contributed to **business analysis** during a **SAP-to-Salesforce** migration, developing a **Power BI** KPI dashboard to monitor NPS and track digital transformation outcomes",
+            "Gathered and documented **stakeholder requirements**, managed platform access, and delivered **data-driven** reports to global project leadership",
         ],
     },
     {
@@ -322,7 +324,7 @@ EXPERIENCE = [
         "loc":     "Breda, Netherlands",
         "dates":   "Jul 2023 – Aug 2023",
         "bullets": [
-            "Produced technical documentation for platform infrastructure; supported **digital operations** across sales and inventory management workflows",
+            "Produced technical documentation for platform infrastructure; supported digital operations across sales and inventory workflows",
         ],
     },
     {
@@ -346,9 +348,10 @@ EDUCATION = [
 ]
 
 SKILLS = {
-    "Programming": ["Python", "SQL", "JavaScript", "TypeScript", "Java"],
-    "Tools":       ["Power BI", "Microsoft Excel", "SAP Analytics", "Salesforce", "Tableau", "Git", "React"],
-    "Languages":   ["Spanish (Native)", "English (C1)", "German (B2)", "French (B1)"],
+    "AI & Agents":  ["Claude Code", "MCP", "Agentic AI Evaluation", "LLM Evaluation Frameworks"],
+    "Programming":  ["Python", "SQL", "JavaScript", "TypeScript", "Java"],
+    "Tools":        ["Power BI", "SAP Analytics", "Salesforce", "Git", "React"],
+    "Languages":    ["Spanish (Native)", "English (C1)", "German (B2)", "French (B1)"],
 }
 
 ADDITIONAL = (
