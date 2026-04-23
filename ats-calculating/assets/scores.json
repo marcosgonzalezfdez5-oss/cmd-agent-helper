@@ -1,44 +1,45 @@
 {
-  "overall": 81,
+  "overall": 29,
   "keyword_match": {
-    "score": 93.3,
+    "score": 13.3,
     "matched": [
-      "Power BI",
       "Python",
-      "SQL",
-      "AI agent",
-      "Next.js",
-      "Salesforce",
-      "evaluation",
-      "dashboard",
-      "cross-functional",
-      "SAP",
-      "Git",
-      "TypeScript",
-      "JavaScript",
-      "data analytics"
+      "SQL"
     ],
     "missing": [
+      "IT security",
+      "Cyber Security",
+      "Incident Response",
+      "Digital Forensics",
+      "Ethical Hacking",
+      "Intrusion Detection",
+      "IT infrastructure",
+      "risk analysis",
+      "security strategy",
+      "data protection",
+      "threat detection",
+      "networks",
       "digital transformation"
     ],
     "total": 15
   },
   "required_skills": {
-    "score": 60.0,
-    "matched": [
-      "Python",
-      "SQL",
-      "Power BI"
-    ],
+    "score": 0.0,
+    "matched": [],
     "missing": [
-      "data analysis",
-      "project management"
+      "IT security",
+      "Cyber Security",
+      "Incident Response",
+      "Digital Forensics",
+      "risk analysis",
+      "IT infrastructure",
+      "German C1"
     ],
-    "total": 5
+    "total": 7
   },
   "seniority": {
     "score": 85.0,
-    "note": "Entry-level role; candidate is a recent graduate with relevant internship and working student experience."
+    "note": "Role is entry-level/junior; candidate is a recent grad with internship experience \u2014 seniority matches well, but required domain skills are absent."
   },
   "structure": {
     "score": 100.0,
@@ -52,15 +53,16 @@
     ]
   },
   "culture": {
-    "score": 75.0,
+    "score": 20.0,
     "matched": [
-      "international",
-      "cross-functional",
-      "detail-oriented"
+      "analytical"
     ],
     "missing": [
-      "collaborative"
+      "solution-oriented",
+      "flexible",
+      "proactive",
+      "team-oriented"
     ],
-    "total": 4
+    "total": 5
   }
 }
