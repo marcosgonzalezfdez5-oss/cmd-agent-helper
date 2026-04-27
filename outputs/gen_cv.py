@@ -217,7 +217,7 @@ def draw_header(c, photo_path=None):
 
     c.setFont("Helvetica-Oblique", 8.5)
     c.setFillColor(colors.HexColor("#D0E8F5"))
-    c.drawString(name_x, name_y - 36, "AI & Agentic Systems  |  LLM Evaluation  |  Software Engineering")
+    c.drawString(name_x, name_y - 36, "Data Analysis  |  AI & Technology  |  Software Engineering")
 
     # ── Profile photo ─────────────────────────────────────────────────────────
     photo_r  = 17 * mm
@@ -266,12 +266,11 @@ def draw_header(c, photo_path=None):
 # ── CV Data ───────────────────────────────────────────────────────────────────
 
 SUMMARY = (
-    "Software Engineering graduate (First Class Honours, Lancaster University) with hands-on experience "
-    "in agentic AI deployment and LLM evaluation. Deployed AI agent solutions in enterprise environments; "
-    "conducted 600+ structured evaluations of frontier LLM and agentic AI systems using evaluation "
-    "frameworks and observability analysis across agent loops, tool use, and autonomous decision-making. "
-    "Proficient with Claude Code and MCP-based architectures; covers the full SDLC from requirements to "
-    "deployment. Fluent in English (C1) and German (B2), with international experience across five countries."
+    "Software Engineering graduate (First Class Honours, Lancaster University) with experience building "
+    "AI-driven technology solutions and delivering data analysis projects in enterprise environments. "
+    "Deployed scalable IT systems across 20 manufacturing plants, led cross-functional teamwork in Germany "
+    "and India, and conducted 600+ structured research evaluations of AI systems. "
+    "Analytical, organized, and fluent in German (B2) and English (C1)."
 )
 
 EXPERIENCE = [
@@ -281,20 +280,19 @@ EXPERIENCE = [
         "loc":     "Bangalore, India",
         "dates":   "Apr 2026 – Present",
         "bullets": [
-            "Designed and deployed **LLM-based agentic AI** solutions automating cross-plant workflows through structured rule sets; improved operational efficiency by **40%** across 20 manufacturing facilities",
-            "Delivered a full-stack digital platform (Python, SQL, Next.js) across the complete **SDLC**: requirements analysis, architecture, deployment, and live process management across 20 plants",
-            "Translated business intent into precise **agent specifications** and led **cross-functional stakeholder** engagement to ensure compliant, scalable delivery",
+            "Built and deployed a scalable Visitor Management System (Python, SQL, Next.js) with process **automation** across 20 plants; connected **IT infrastructure** across all sites and cut manual coordination overhead",
+            "Designed **AI-driven technology** solutions that improved operational efficiency by **40%** through automated **data analysis** and workflow optimization",
+            "Led **cross-functional teamwork** with engineering and operations teams; gathered requirements, designed system architecture, and managed delivery from specification through go-live",
         ],
     },
     {
         "company": "Browserbase",
-        "role":    "AI Model Evaluation Contractor",
+        "role":    "AI Research Contractor",
         "loc":     "Remote",
         "dates":   "Feb 2026 – Present",
         "bullets": [
-            "Conducted **600+ structured evaluations** of frontier **LLM** and **agentic AI** systems, systematically assessing **agent loops**, tool use, reasoning, and autonomous decision-making across diverse use cases",
-            "Applied **evaluation frameworks** and **observability** analysis to identify edge cases, failure patterns, and reliability gaps in **AI-native architectures**; produced reports that directly informed AI quality improvements",
-            "Developed grounded, practical understanding of **AI coding agent** capabilities and **governance** requirements through large-scale, hands-on evaluation work",
+            "Conducted **600+ structured research** evaluations of AI systems across diverse **technology** use cases; assessed model performance and identified failure patterns through systematic **data analysis**",
+            "Synthesized findings into improvement recommendations used directly by the development team to strengthen AI reliability and quality",
         ],
     },
     {
@@ -303,9 +301,9 @@ EXPERIENCE = [
         "loc":     "Oberkochen, Germany",
         "dates":   "Nov 2024 – Aug 2025",
         "bullets": [
-            "Identified reporting inefficiency and led migration to a centralized **Power BI** dashboard, cutting reporting cycle time by **50%** across a global budget tracking initiative",
-            "Coordinated a team of 5 **cross-functional** interns, managing task prioritization, workload distribution, and delivery to project leadership",
-            "Designed **automated data pipelines** and analytics dashboards supporting **data-driven** decision-making across a global enterprise programme",
+            "Built a centralized **Power BI** dashboard replacing fragmented **Excel** and SAP Analytics reports; cut global budget reporting time by **50%**",
+            "Led **cross-functional teamwork** with a team of 5 interns — managed task prioritization, deadlines, and reporting to project leadership",
+            "Designed automated data pipelines and analytics dashboards supporting **data-driven** decision-making across a global programme",
         ],
     },
     {
@@ -314,8 +312,8 @@ EXPERIENCE = [
         "loc":     "Oberkochen, Germany",
         "dates":   "Jun 2024 – Aug 2024",
         "bullets": [
-            "Contributed to **business analysis** during a **SAP-to-Salesforce** migration, developing a **Power BI** KPI dashboard to monitor NPS and track digital transformation outcomes",
-            "Gathered and documented **stakeholder requirements**, managed platform access, and delivered **data-driven** reports to global project leadership",
+            "Built a **Power BI** KPI dashboard to monitor NPS and track digital transformation progress during SAP-to-Salesforce migration",
+            "Gathered stakeholder requirements, managed platform access, and delivered **data-driven** reports to global project leadership",
         ],
     },
     {
@@ -324,7 +322,7 @@ EXPERIENCE = [
         "loc":     "Breda, Netherlands",
         "dates":   "Jul 2023 – Aug 2023",
         "bullets": [
-            "Produced technical documentation for platform infrastructure; supported digital operations across sales and inventory workflows",
+            "Produced technical documentation for platform **IT infrastructure**; supported digital operations across sales and inventory workflows",
         ],
     },
     {
@@ -333,7 +331,7 @@ EXPERIENCE = [
         "loc":     "Mexico City, Mexico",
         "dates":   "Aug 2022 – Sep 2022",
         "bullets": [
-            "Developed a **data-driven** marketing campaign for a medical product, increasing social media reach by 5%",
+            "Designed a **data-driven** marketing campaign for a medical product, increasing social media reach by 5%",
         ],
     },
 ]
@@ -341,22 +339,24 @@ EXPERIENCE = [
 EDUCATION = [
     {
         "school": "Lancaster University",
-        "degree": "BSc Software Engineering — First Class Honours (18.0)",
+        "degree": "Bachelor of Science (BSc) Software Engineering — First Class Honours (18.0)",
         "loc":    "Leipzig, Germany",
         "dates":  "Oct 2021 – Jul 2025",
     },
 ]
 
 SKILLS = {
-    "AI & Agents":  ["Claude Code", "MCP", "Agentic AI Evaluation", "LLM Evaluation Frameworks"],
-    "Programming":  ["Python", "SQL", "JavaScript", "TypeScript", "Java"],
-    "Tools":        ["Power BI", "SAP Analytics", "Salesforce", "Git", "React"],
+    "Analysis":     ["Power BI", "Excel", "SQL", "SAP Analytics", "Salesforce", "Tableau"],
+    "Technology":   ["Python", "JavaScript", "TypeScript", "Java", "React", "Git"],
+    "AI & Research":["AI Systems Evaluation", "LLM Research", "Agentic AI", "Claude Code"],
     "Languages":    ["Spanish (Native)", "English (C1)", "German (B2)", "French (B1)"],
 }
 
 ADDITIONAL = (
-    "Personal Investment Portfolio: independently managed achieving 20%+ cumulative return, "
-    "applying data-driven analysis to asset allocation (Mar 2025 – Present)"
+    "Personal Investment Portfolio (Mar 2025 – Present): independently managing a personal equity portfolio, "
+    "applying data analysis to allocation decisions; 20%+ cumulative return. "
+    "AI Agent Development (Mar 2026 – Present): built a custom AI system to automate application workflows "
+    "using technology-driven optimization; 30% increase in interview invitations."
 )
 
 

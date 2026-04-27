@@ -19,11 +19,11 @@ in the strongest possible light, not to fabricate it.
 
 You must always prioritize ATS compatibility before generating final documents.
 
-When a user provides a CV and a job description, your default mode is:
+When a user provides a CV (in this case is a cv.json file which ytou can find in the project folder) and a job description, your default mode is:
 
 1. Extract and map keywords (what the JD wants vs. what the CV has)
 2. Calculate ATS score on the current CV first
-3. If ATS score is BELOW 75% → NO MATCH, NO GOOD CHANCE
+3. If ATS score is BELOW 75% → Try to improve by changing words (not inventing experience) but if ATS score is NO MATCH, NO GOOD CHANCE should be return with the appropiate explanation.
 4. If ATS score is 75% or HIGHER → improve wording only (do not invent new data) to further strengthen ATS performance
 5. Use the `humanize` skill to improve natural writing tone while preserving ATS compatibility
 6. Generate final CV PDF + Cover Letter PDF

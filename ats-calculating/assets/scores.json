@@ -1,45 +1,55 @@
 {
-  "overall": 29,
+  "overall": 79,
   "keyword_match": {
-    "score": 13.3,
+    "score": 80.0,
     "matched": [
-      "Python",
-      "SQL"
+      "AI",
+      "data analysis",
+      "technology",
+      "automation",
+      "Excel",
+      "STEM",
+      "Engineering",
+      "analytical",
+      "German",
+      "English",
+      "research",
+      "scalable",
+      "teamwork",
+      "IT infrastructure",
+      "data-driven",
+      "software engineering"
     ],
     "missing": [
-      "IT security",
-      "Cyber Security",
-      "Incident Response",
-      "Digital Forensics",
-      "Ethical Hacking",
-      "Intrusion Detection",
-      "IT infrastructure",
-      "risk analysis",
-      "security strategy",
-      "data protection",
-      "threat detection",
-      "networks",
-      "digital transformation"
+      "digital technologies",
+      "PowerPoint",
+      "consulting",
+      "client"
     ],
-    "total": 15
+    "total": 20
   },
   "required_skills": {
-    "score": 0.0,
-    "matched": [],
-    "missing": [
-      "IT security",
-      "Cyber Security",
-      "Incident Response",
-      "Digital Forensics",
-      "risk analysis",
-      "IT infrastructure",
-      "German C1"
+    "score": 81.8,
+    "matched": [
+      "Bachelor",
+      "STEM",
+      "Engineering",
+      "analytical",
+      "Excel",
+      "German",
+      "English",
+      "teamwork",
+      "data analysis"
     ],
-    "total": 7
+    "missing": [
+      "PowerPoint",
+      "communication"
+    ],
+    "total": 11
   },
   "seniority": {
     "score": 85.0,
-    "note": "Role is entry-level/junior; candidate is a recent grad with internship experience \u2014 seniority matches well, but required domain skills are absent."
+    "note": "Role targets recent graduates and junior professionals entering consulting; Marcos holds a completed BSc in Software Engineering with relevant AI and data experience, which is a strong fit for the entry-level position."
   },
   "structure": {
     "score": 100.0,
@@ -53,16 +63,20 @@
     ]
   },
   "culture": {
-    "score": 20.0,
+    "score": 33.3,
     "matched": [
-      "analytical"
+      "analytical",
+      "teamwork",
+      "independent"
     ],
     "missing": [
-      "solution-oriented",
-      "flexible",
-      "proactive",
-      "team-oriented"
+      "high performance",
+      "ambitious",
+      "collaborative",
+      "ethics",
+      "integrity",
+      "innovative"
     ],
-    "total": 5
+    "total": 9
   }
 }
