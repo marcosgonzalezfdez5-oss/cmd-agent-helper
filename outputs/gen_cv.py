@@ -28,7 +28,7 @@ from reportlab.lib.units import mm
 from reportlab.pdfgen import canvas
 
 # ── Output ────────────────────────────────────────────────────────────────────
-OUT      = "cv_Marcos_Gonzalez_Fernandez.pdf"
+OUT      = "cv_Marcos_Gonzalez.pdf"
 PHOTO    = r"C:\Users\Marcos\Documents\Projects\cmd-agent-helper\cv-creating\assets\profile-pic.jpg"
 
 # ── Design tokens ─────────────────────────────────────────────────────────────

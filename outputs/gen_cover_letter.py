@@ -6,7 +6,7 @@ from reportlab.platypus import Paragraph, Frame
 from reportlab.lib.styles import ParagraphStyle
 from reportlab.lib.enums import TA_JUSTIFY, TA_CENTER, TA_LEFT
 
-OUT = r"C:\Users\Marcos\Documents\Projects\cmd-agent-helper\outputs\cover_letter_Vetaion.pdf"
+OUT = r"C:\Users\Marcos\Documents\Projects\cmd-agent-helper\outputs\cover_letter.pdf"
 
 PAGE_W, PAGE_H = A4
 L_MARGIN  = 25 * mm

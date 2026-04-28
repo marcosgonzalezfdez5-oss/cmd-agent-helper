@@ -106,3 +106,19 @@ Use a clean structure like:
   "skills": [],
   "languages": []
 }
+```
+
+---
+
+### Step 4 — Generate and Deliver
+
+Run the generator:
+
+```bash
+py outputs/gen_cv.py
+```
+
+**Output filename rule:**  
+Always output to `outputs/cv_Marcos_Gonzalez.pdf` — this overwrites the existing file.  
+Never create job-specific filenames like `cv_Marcos_Vetaion.pdf` or `cv_output.pdf`.  
+The single fixed path ensures the output folder stays clean and the latest version is always findable.

@@ -222,11 +222,16 @@ Paragraph("I have worked with <b>Power BI</b> and <b>SAP Analytics</b> to...", b
 
 ### Step 5 — Validate and Deliver
 
+Run the generator:
+
 ```bash
-python -c "from pypdf import PdfReader; r=PdfReader('cover_letter.pdf'); print(len(r.pages), 'pages OK')"
+py outputs/gen_cover_letter.py
 ```
 
-Copy to `/mnt/user-data/outputs/cover_letter.pdf` and use `present_files`.
+**Output filename rule:**  
+Always output to `outputs/cover_letter.pdf` — this overwrites the existing file.  
+Never create job-specific filenames like `cover_letter_Vetaion.pdf` or `cover_letter_output.pdf`.  
+The single fixed path ensures the output folder stays clean and the latest version is always findable.
 
 Also output inline:
 - The 5–8 JD keywords used in the letter
