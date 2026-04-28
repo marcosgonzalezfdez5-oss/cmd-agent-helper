@@ -1,55 +1,46 @@
 {
-  "overall": 79,
+  "overall": 87,
   "keyword_match": {
-    "score": 80.0,
+    "score": 66.7,
     "matched": [
       "AI",
-      "data analysis",
-      "technology",
       "automation",
-      "Excel",
-      "STEM",
-      "Engineering",
-      "analytical",
-      "German",
-      "English",
-      "research",
-      "scalable",
-      "teamwork",
-      "IT infrastructure",
-      "data-driven",
-      "software engineering"
+      "Python",
+      "software engineering",
+      "AI automation",
+      "data architecture",
+      "manufacturing",
+      "engineering",
+      "system architecture",
+      "scalable"
     ],
     "missing": [
-      "digital technologies",
-      "PowerPoint",
-      "consulting",
-      "client"
+      "digital twin",
+      "electrical design",
+      "production",
+      "industrial",
+      "startup"
     ],
-    "total": 20
+    "total": 15
   },
   "required_skills": {
-    "score": 81.8,
+    "score": 100.0,
     "matched": [
-      "Bachelor",
-      "STEM",
-      "Engineering",
-      "analytical",
-      "Excel",
-      "German",
-      "English",
-      "teamwork",
-      "data analysis"
+      "Python",
+      "AI",
+      "automation",
+      "software engineering",
+      "engineering",
+      "system architecture",
+      "data architecture",
+      "scalable"
     ],
-    "missing": [
-      "PowerPoint",
-      "communication"
-    ],
-    "total": 11
+    "missing": [],
+    "total": 8
   },
   "seniority": {
-    "score": 85.0,
-    "note": "Role targets recent graduates and junior professionals entering consulting; Marcos holds a completed BSc in Software Engineering with relevant AI and data experience, which is a strong fit for the entry-level position."
+    "score": 88.0,
+    "note": "Junior/recent graduate role targeting 0-2 years experience; Marcos is a 2025 BSc Software Engineering graduate with junior-level AI and automation project experience \u2014 perfect seniority alignment."
   },
   "structure": {
     "score": 100.0,
@@ -63,20 +54,16 @@
     ]
   },
   "culture": {
-    "score": 33.3,
+    "score": 100.0,
     "matched": [
       "analytical",
-      "teamwork",
-      "independent"
+      "builder",
+      "problem solving",
+      "scalable",
+      "innovative",
+      "international"
     ],
-    "missing": [
-      "high performance",
-      "ambitious",
-      "collaborative",
-      "ethics",
-      "integrity",
-      "innovative"
-    ],
-    "total": 9
+    "missing": [],
+    "total": 6
   }
 }

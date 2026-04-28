@@ -266,11 +266,11 @@ def draw_header(c, photo_path=None):
 # ── CV Data ───────────────────────────────────────────────────────────────────
 
 SUMMARY = (
-    "Software Engineering graduate (First Class Honours, Lancaster University) with experience building "
-    "AI-driven technology solutions and delivering data analysis projects in enterprise environments. "
-    "Deployed scalable IT systems across 20 manufacturing plants, led cross-functional teamwork in Germany "
-    "and India, and conducted 600+ structured research evaluations of AI systems. "
-    "Analytical, organized, and fluent in German (B2) and English (C1)."
+    "Software Engineering graduate (First Class Honours, Lancaster University) who builds AI automation "
+    "systems and deploys them end to end. Designed and shipped an AI automation platform across 20 "
+    "manufacturing plants in India, evaluated 600+ AI systems at Browserbase to understand real-world "
+    "model behavior, and built data architecture, data pipelines, and analytics tools across production "
+    "environments. Python, SQL, JavaScript. Fluent in German (B2) and English (C1)."
 )
 
 EXPERIENCE = [
@@ -280,9 +280,9 @@ EXPERIENCE = [
         "loc":     "Bangalore, India",
         "dates":   "Apr 2026 – Present",
         "bullets": [
-            "Built and deployed a scalable Visitor Management System (Python, SQL, Next.js) with process **automation** across 20 plants; connected **IT infrastructure** across all sites and cut manual coordination overhead",
-            "Designed **AI-driven technology** solutions that improved operational efficiency by **40%** through automated **data analysis** and workflow optimization",
-            "Led **cross-functional teamwork** with engineering and operations teams; gathered requirements, designed system architecture, and managed delivery from specification through go-live",
+            "Designed and deployed an **AI automation** platform using Python, SQL, and Next.js across 20 **manufacturing** plants in India; integrated site-wide **IT infrastructure** and eliminated manual registration overhead across all sites",
+            "Built **data architecture** and automated **data analysis** pipelines that improved operational efficiency by **40%** — defined the schema, wrote the backend, and ran end-to-end production deployment",
+            "Led **cross-functional** collaboration across engineering and operations teams; gathered requirements from stakeholders with conflicting priorities, translated them into clear system specifications, and drove delivery from first brief to go-live",
         ],
     },
     {
@@ -291,8 +291,8 @@ EXPERIENCE = [
         "loc":     "Remote",
         "dates":   "Feb 2026 – Present",
         "bullets": [
-            "Conducted **600+ structured research** evaluations of AI systems across diverse **technology** use cases; assessed model performance and identified failure patterns through systematic **data analysis**",
-            "Synthesized findings into improvement recommendations used directly by the development team to strengthen AI reliability and quality",
+            "Conducted **600+ structured** evaluations of AI systems; applied **analytical thinking** to identify edge cases, failure patterns, and model behavior gaps across diverse use cases",
+            "Synthesized findings into prioritized improvement recommendations used directly by the development team — communicated technical conclusions clearly to non-technical stakeholders",
         ],
     },
     {
@@ -302,7 +302,7 @@ EXPERIENCE = [
         "dates":   "Nov 2024 – Aug 2025",
         "bullets": [
             "Built a centralized **Power BI** dashboard replacing fragmented **Excel** and SAP Analytics reports; cut global budget reporting time by **50%**",
-            "Led **cross-functional teamwork** with a team of 5 interns — managed task prioritization, deadlines, and reporting to project leadership",
+            "Led a team of 5 interns through a shifting project scope — coordinated priorities, adapted the delivery plan when requirements changed, and reported progress to global project leadership",
             "Designed automated data pipelines and analytics dashboards supporting **data-driven** decision-making across a global programme",
         ],
     },
@@ -348,7 +348,7 @@ EDUCATION = [
 SKILLS = {
     "Analysis":     ["Power BI", "Excel", "SQL", "SAP Analytics", "Salesforce", "Tableau"],
     "Technology":   ["Python", "JavaScript", "TypeScript", "Java", "React", "Git"],
-    "AI & Research":["AI Systems Evaluation", "LLM Research", "Agentic AI", "Claude Code"],
+    "AI & Research":["AI Automation", "AI Systems Evaluation", "LLM Research", "Agentic AI", "Claude Code"],
     "Languages":    ["Spanish (Native)", "English (C1)", "German (B2)", "French (B1)"],
 }
 

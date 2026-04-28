@@ -79,6 +79,13 @@ Hard constraints:
 - NEVER invent skills
 - NEVER add technologies the candidate does not know
 - Every statement must remain truthful and verifiable
+- NEVER list soft skills as a standalone section (e.g. "Soft Skills: Problem Solving, Collaborative…")
+  Soft skills must be demonstrated through experience bullet wording, not stated as traits.
+  Examples:
+    ✗  "Soft Skills: Problem Solving, Adaptability, Leadership"
+    ✓  "gathered requirements from stakeholders with conflicting priorities" → shows problem solving
+    ✓  "adapted the delivery plan when requirements changed" → shows adaptability
+    ✓  "led a team of 5 interns through a shifting project scope" → shows leadership
 
 ---
 

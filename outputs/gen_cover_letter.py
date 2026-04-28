@@ -6,7 +6,7 @@ from reportlab.platypus import Paragraph, Frame
 from reportlab.lib.styles import ParagraphStyle
 from reportlab.lib.enums import TA_JUSTIFY, TA_CENTER, TA_LEFT
 
-OUT = r"C:\Users\Marcos\Documents\Projects\cmd-agent-helper\outputs\cover_letter.pdf"
+OUT = r"C:\Users\Marcos\Documents\Projects\cmd-agent-helper\outputs\cover_letter_Vetaion.pdf"
 
 PAGE_W, PAGE_H = A4
 L_MARGIN  = 25 * mm
@@ -23,42 +23,39 @@ PHONE    = "+34 603786521"
 EMAIL    = "marcos.gonzalezfdez5@gmail.com"
 LINKEDIN = "linkedin.com/in/marcos-gonzalez-fdez5/"
 
-COMPANY  = "McKinsey & Company"
-ADDRESS  = "Germany"
-DATE_STR = "27 April 2026"
-ROLE     = "Junior Fellow – Tech & AI"
-START    = "06 July 2026"
-SALUT    = "McKinsey Recruiting Team"
+COMPANY  = "Vetaion GmbH"
+ADDRESS  = "Garching, Munich"
+DATE_STR = "28 April 2026"
+ROLE     = "AI Automation Engineer"
+START    = "As soon as possible"
+SALUT    = "Vetaion Team"
 
 BODY = [
     (
-        "When I deployed an AI-driven system across 20 manufacturing plants, the hardest part was "
-        "not the technology itself. It was turning vague requirements into a system that operations "
-        "teams across Germany and India would actually trust and use — gathering their input, "
-        "explaining the architecture, and making sure the solution fit how they worked rather "
-        "than how I assumed they worked. That process is what I found most interesting, and it "
-        "is close to what McKinsey's Junior Fellow Tech & AI role describes."
+        "At Stumpp Schuele & Somappa Springs, I built and shipped an AI automation platform for "
+        "20 manufacturing plants. Not a prototype — a live system running across production "
+        "facilities in India, built in Python and SQL, with data architecture I designed and a "
+        "backend I wrote end to end. When I read what Vetaion is building, that project is the "
+        "closest thing I have done to it."
     ),
     (
-        "My technical work spans two directions. At Carl Zeiss AG, I built data analysis dashboards "
-        "and automated reporting pipelines that cut global budget tracking time by 50%; I also led "
-        "a cross-functional team of five interns and managed delivery to project leadership. At "
-        "Browserbase, I conducted 600+ structured research evaluations of AI systems, ran systematic "
-        "data analysis on model behavior, and produced findings that the development team used "
-        "directly. Neither role was purely technical — both required communicating clearly with "
-        "non-technical stakeholders and organizing work independently under time pressure."
+        "At Browserbase, I evaluated over 600 AI systems under production conditions. That work "
+        "gave me a clear understanding of where AI holds up and where it does not — which matters "
+        "when you are building automation that real manufacturing lines depend on. Combined with "
+        "the Stumpp Schuele deployment, I can point to shipped systems in both AI evaluation and "
+        "AI automation. I write Python, SQL, and JavaScript. I have owned data architecture, "
+        "automated pipelines, and multi-site IT integration from specification to go-live."
     ),
     (
-        "McKinsey is where I want to take this further. The chance to work on AI-driven technology "
-        "projects for Fortune 500 and DAX companies — and to learn consulting from people who do "
-        "it at that level — is not something I can replicate elsewhere. My First Class Honours "
-        "degree in Software Engineering, combined with fluency in German (B2) and English (C1) "
-        "and working experience across five countries, means I can contribute in an international "
-        "team from day one."
+        "I want this role because of the scope. Building the AI layer of a manufacturing OS from "
+        "0 to 1, at a company rethinking how control cabinets get made, is the kind of technically "
+        "hard problem I am looking for. The electrical design and EPLAN side is new to me, but "
+        "picking up an unfamiliar technical domain quickly is something I have done in every role "
+        "so far. My BSc in Software Engineering (First Class Honours, Lancaster University), "
+        "combined with hands-on experience across five countries, means I contribute from day one."
     ),
     (
-        "I would welcome the chance to discuss how my background fits the Junior Fellow Tech & AI "
-        "role."
+        "I would welcome the chance to discuss this at your Garching office."
     ),
 ]
 

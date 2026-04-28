@@ -47,6 +47,7 @@ def cv_to_text(cv: dict) -> str:
     skills = cv.get("skills", {})
     parts.extend(skills.get("tools", []))
     parts.extend(skills.get("programming", []))
+    parts.extend(skills.get("soft-skills", []))
 
     for lang in cv.get("languages", []):
         parts.append(lang.get("language", ""))
@@ -171,3 +172,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+

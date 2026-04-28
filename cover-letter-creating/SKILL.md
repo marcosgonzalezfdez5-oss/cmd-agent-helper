@@ -106,6 +106,12 @@ Warm regards,
 - Avoid filler phrases: "I am writing to apply for…", "I believe I would be a great fit…"
 - Lead with substance, not pleasantries
 - Each paragraph should have one clear job — no paragraph tries to do two things
+- NEVER state soft skills directly ("I am a collaborative and analytical person…")
+  Soft skills must be shown through specific situations and outcomes, not named.
+  Examples:
+    ✗  "I am an adaptable and problem-solving oriented professional"
+    ✓  "When requirements shifted mid-project, I restructured the delivery plan and kept the timeline"
+    ✓  "I gathered input from teams with conflicting priorities and turned it into a single spec"
 
 ### Step 4 — Build the PDF with ReportLab
 
