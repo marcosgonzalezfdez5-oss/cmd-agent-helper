@@ -122,3 +122,25 @@ py outputs/gen_cv.py
 Always output to `outputs/cv_Marcos_Gonzalez.pdf` — this overwrites the existing file.  
 Never create job-specific filenames like `cv_Marcos_Vetaion.pdf` or `cv_output.pdf`.  
 The single fixed path ensures the output folder stays clean and the latest version is always findable.
+
+---
+
+### Step 5 — Post-generation Layout Check (mandatory)
+
+After generation, the script prints a layout report. **Always read it before declaring success.**
+
+**Interpret the output:**
+
+| Report line | Meaning | Action |
+|---|---|---|
+| `[OK]` with positive remaining | Content fits cleanly | Deliver the PDF |
+| `[WARNING]` ADDITIONAL clipped | ADDITIONAL text overflowed page | Shorten ADDITIONAL or trim bullets in earlier sections |
+| `[FAIL]` Content overflowed | Total content too long | Trim bullets / shorten summary / reduce skills rows |
+
+**Banner overflow:**  
+The generator auto-shrinks the name and subtitle to stay within the teal diagonal shape. If it shrank below 14pt (name) or 7pt (subtitle), the title/name is too long — shorten it.
+
+**Rules:**
+- Never deliver a PDF without checking the layout report
+- If content is clipped, fix the content and re-run — do not skip
+- The ADDITIONAL section is the first to be cut; trim it first before touching other sections

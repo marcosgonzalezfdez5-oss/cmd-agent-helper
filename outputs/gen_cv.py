@@ -39,10 +39,11 @@ GRAY       = colors.HexColor("#888888")
 WHITE      = colors.white
 
 PAGE_W, PAGE_H = A4          # 595.28 x 841.89 pts
-MARGIN    = 14 * mm
-BODY_X    = MARGIN
-BODY_W    = PAGE_W - 2 * MARGIN
-HEADER_H  = 40 * mm          # height of the top banner area
+MARGIN        = 14 * mm
+BODY_X        = MARGIN
+BODY_W        = PAGE_W - 2 * MARGIN
+HEADER_H      = 40 * mm      # height of the top banner area
+BOTTOM_MARGIN = 10 * mm      # minimum y before content clips off the page
 
 
 # ── Helpers ───────────────────────────────────────────────────────────────────
@@ -62,6 +63,13 @@ def wrap(c, text, font, size, max_w):
     if cur:
         lines.append(cur)
     return lines
+
+
+def _teal_right_edge_at(y):
+    """Right x boundary of the diagonal teal banner shape at vertical position y."""
+    banner_bottom = PAGE_H - HEADER_H
+    t = max(0.0, min(1.0, (y - banner_bottom) / HEADER_H))
+    return PAGE_W * 0.44 + (PAGE_W * 0.60 - PAGE_W * 0.44) * t
 
 
 def section_header(c, x, y, width, text):
@@ -210,14 +218,31 @@ def draw_header(c, photo_path=None):
     name_x = MARGIN
     name_y = PAGE_H - 10 * mm
 
-    c.setFillColor(WHITE)
-    c.setFont("Helvetica-Bold", 19)
-    c.drawString(name_x, name_y,      "MARCOS GONZALEZ")
-    c.drawString(name_x, name_y - 21, "FERNANDEZ")
+    # Auto-shrink name font so both lines stay within the teal shape
+    name_sz = 19
+    name_line1 = "MARCOS GONZALEZ"
+    name_line2 = "FERNANDEZ"
+    for line in (name_line1, name_line2):
+        avail = _teal_right_edge_at(name_y) - name_x - 4 * mm
+        while name_sz > 12 and c.stringWidth(line, "Helvetica-Bold", name_sz) > avail:
+            name_sz -= 0.5
 
-    c.setFont("Helvetica-Oblique", 8.5)
+    c.setFillColor(WHITE)
+    c.setFont("Helvetica-Bold", name_sz)
+    line_gap = name_sz + 2
+    c.drawString(name_x, name_y,            name_line1)
+    c.drawString(name_x, name_y - line_gap, name_line2)
+
+    # Auto-shrink subtitle so it stays within the teal shape at that y
+    subtitle_text = "AI & Automation  |  End-to-End Process Automation"
+    subtitle_y = name_y - line_gap - 15
+    avail_sub = _teal_right_edge_at(subtitle_y) - name_x - 4 * mm
+    sub_sz = 8.5
+    while sub_sz > 6.0 and c.stringWidth(subtitle_text, "Helvetica-Oblique", sub_sz) > avail_sub:
+        sub_sz -= 0.25
+    c.setFont("Helvetica-Oblique", sub_sz)
     c.setFillColor(colors.HexColor("#D0E8F5"))
-    c.drawString(name_x, name_y - 36, "Data Analysis  |  AI & Technology  |  Software Engineering")
+    c.drawString(name_x, subtitle_y, subtitle_text)
 
     # ── Profile photo ─────────────────────────────────────────────────────────
     photo_r  = 17 * mm
@@ -266,23 +291,36 @@ def draw_header(c, photo_path=None):
 # ── CV Data ───────────────────────────────────────────────────────────────────
 
 SUMMARY = (
-    "Software Engineering graduate (First Class Honours, Lancaster University) who builds AI automation "
-    "systems and deploys them end to end. Designed and shipped an AI automation platform across 20 "
-    "manufacturing plants in India, evaluated 600+ AI systems at Browserbase to understand real-world "
-    "model behavior, and built data architecture, data pipelines, and analytics tools across production "
-    "environments. Python, SQL, JavaScript. Fluent in German (B2) and English (C1)."
+    "Software Engineering graduate (First Class Honours, Lancaster University) who builds automation systems. "
+    "Deployed end-to-end AI automation across 20 manufacturing sites at Stumpp Schuele - requirements, architecture, "
+    "development, testing, and go-live owned without hand-offs, achieving 40% operational efficiency improvement. "
+    "Built an agentic AI platform at Meerkats AI, mapping manual processes and replacing them with automated workflows. "
+    "Built an AI automation bot independently to automate own job application process - in production, producing results. "
+    "Applies Gen-AI and scripting to optimize work as a matter of course. Analytical and structured by default. "
+    "English C1, German B2."
 )
 
 EXPERIENCE = [
+    {
+        "company": "Meerkats AI",
+        "role":    "AI Founder Associate",
+        "loc":     "Remote",
+        "dates":   "Apr 2026 – Present",
+        "bullets": [
+            "Built an **agentic AI** automation platform from the ground up in a **startup** environment, engineering multi-step **workflow** automation against real business data and driving a **25%** uplift in user engagement",
+            "Mapped business **workflows**, identified manual processes as **automation** targets, and shipped a **multi-agent** communication system into the founding team's live operations - from idea to MVP",
+            "Applied **AI** and **automation** tools to optimize internal processes, iterating rapidly on outputs and improving reliability across the full deployment lifecycle",
+        ],
+    },
     {
         "company": "Stumpp Schuele & Somappa Springs",
         "role":    "Junior IT Project Manager",
         "loc":     "Bangalore, India",
         "dates":   "Apr 2026 – Present",
         "bullets": [
-            "Designed and deployed an **AI automation** platform using Python, SQL, and Next.js across 20 **manufacturing** plants in India; integrated site-wide **IT infrastructure** and eliminated manual registration overhead across all sites",
-            "Built **data architecture** and automated **data analysis** pipelines that improved operational efficiency by **40%** — defined the schema, wrote the backend, and ran end-to-end production deployment",
-            "Led **cross-functional** collaboration across engineering and operations teams; gathered requirements from stakeholders with conflicting priorities, translated them into clear system specifications, and drove delivery from first brief to go-live",
+            "Designed and deployed an **AI**-powered **automation** platform across **20** manufacturing sites using **Python**, **TypeScript**, and **SQL**; achieved **40%** operational efficiency improvement through systematic **process optimization** of high-volume manual **workflows**",
+            "Mapped manual process bottlenecks across a distributed industrial environment, designed automated replacement systems, and delivered end to end: requirements, architecture, development, **testing**, and **go-live** without hand-offs",
+            "Built automated backend pipelines eliminating manual coordination; **documented** processes, requirements, and architecture for long-term maintainability across the full site network",
         ],
     },
     {
@@ -291,8 +329,8 @@ EXPERIENCE = [
         "loc":     "Remote",
         "dates":   "Feb 2026 – Present",
         "bullets": [
-            "Conducted **600+ structured** evaluations of AI systems; applied **analytical thinking** to identify edge cases, failure patterns, and model behavior gaps across diverse use cases",
-            "Synthesized findings into prioritized improvement recommendations used directly by the development team — communicated technical conclusions clearly to non-technical stakeholders",
+            "Evaluated **600+ real AI** outputs in production, systematically identifying edge cases and failure modes using **structured analytical** frameworks across diverse real-world use cases",
+            "Developed practical **analytical** intuition for how frontier **AI** models perform under real conditions, translating findings into **quality** improvement priorities for the development team",
         ],
     },
     {
@@ -301,9 +339,9 @@ EXPERIENCE = [
         "loc":     "Oberkochen, Germany",
         "dates":   "Nov 2024 – Aug 2025",
         "bullets": [
-            "Built a centralized **Power BI** dashboard replacing fragmented **Excel** and SAP Analytics reports; cut global budget reporting time by **50%**",
-            "Led a team of 5 interns through a shifting project scope — coordinated priorities, adapted the delivery plan when requirements changed, and reported progress to global project leadership",
-            "Designed automated data pipelines and analytics dashboards supporting **data-driven** decision-making across a global programme",
+            "Drove **data-driven** reporting for a global programme by consolidating fragmented Excel and SAP Analytics sources into centralized **data pipelines**, cutting reporting time by **50%**",
+            "Built and maintained a **Power BI** dashboard for global budget tracking, supporting strategic decision-making with automated real-time data integration for international project leadership",
+            "Coordinated a team of 5 interns through shifting project scope, managing priorities and communicating progress to global stakeholders",
         ],
     },
     {
@@ -312,26 +350,7 @@ EXPERIENCE = [
         "loc":     "Oberkochen, Germany",
         "dates":   "Jun 2024 – Aug 2024",
         "bullets": [
-            "Built a **Power BI** KPI dashboard to monitor NPS and track digital transformation progress during SAP-to-Salesforce migration",
-            "Gathered stakeholder requirements, managed platform access, and delivered **data-driven** reports to global project leadership",
-        ],
-    },
-    {
-        "company": "Carl Zeiss BV",
-        "role":    "Operations Intern",
-        "loc":     "Breda, Netherlands",
-        "dates":   "Jul 2023 – Aug 2023",
-        "bullets": [
-            "Produced technical documentation for platform **IT infrastructure**; supported digital operations across sales and inventory workflows",
-        ],
-    },
-    {
-        "company": "Carl Zeiss Mexico",
-        "role":    "Marketing Intern",
-        "loc":     "Mexico City, Mexico",
-        "dates":   "Aug 2022 – Sep 2022",
-        "bullets": [
-            "Designed a **data-driven** marketing campaign for a medical product, increasing social media reach by 5%",
+            "Supported a large-scale digital transformation (SAP to Salesforce migration): gathered stakeholder requirements, built Power BI reporting solutions, and delivered data-driven insights enabling informed decisions throughout the transition",
         ],
     },
 ]
@@ -339,28 +358,28 @@ EXPERIENCE = [
 EDUCATION = [
     {
         "school": "Lancaster University",
-        "degree": "Bachelor of Science (BSc) Software Engineering — First Class Honours (18.0)",
+        "degree": "Bachelor of Science (BSc) Software Engineering, First Class Honours (18.0)",
         "loc":    "Leipzig, Germany",
         "dates":  "Oct 2021 – Jul 2025",
     },
 ]
 
 SKILLS = {
-    "Analysis":     ["Power BI", "Excel", "SQL", "SAP Analytics", "Salesforce", "Tableau"],
-    "Technology":   ["Python", "JavaScript", "TypeScript", "Java", "React", "Git"],
-    "AI & Research":["AI Automation", "AI Systems Evaluation", "LLM Research", "Agentic AI", "Claude Code"],
-    "Languages":    ["Spanish (Native)", "English (C1)", "German (B2)", "French (B1)"],
+    "Automation":    ["Process Automation", "Workflow Design", "Process Optimization", "AI Automation", "Scripting", "Python", "TypeScript", "SQL"],
+    "AI":            ["Agentic AI", "Gen-AI", "LLM Integration", "AI Evaluation", "Prompt Engineering", "Claude"],
+    "Analytics":     ["Power BI", "Microsoft Excel", "SAP Analytics", "Tableau", "Salesforce"],
+    "Technical":     ["Java", "JavaScript", "React", "Next.js", "Git", "Maven", "JUnit (Testing)"],
+    "Languages":     ["Spanish (Native)", "English (C1)", "German (B2)", "French (B1)"],
 }
 
 ADDITIONAL = (
-    "Personal Investment Portfolio (Mar 2025 – Present): independently managing a personal equity portfolio, "
-    "applying data analysis to allocation decisions; 20%+ cumulative return. "
-    "AI Agent Development (Mar 2026 – Present): built a custom AI system to automate application workflows "
-    "using technology-driven optimization; 30% increase in interview invitations."
-)
+    "Custom AI Automation Bot (Mar 2026 – Present): built a multi-agent AI bot from scratch to automate own job "
+    "application workflows end to end - document generation, process automation, and scripted output delivery; "
+    "30% increase in interview invitations. Built independently, without existing infrastructure. "
+    )
 
 
-# ── Main generation ────────────────────────────────────────────────────────────
+# ── Main generation ───────────────────────────────────────────────────────────
 
 def generate(photo_path=None, out_path=OUT):
     c = canvas.Canvas(out_path, pagesize=A4)
@@ -377,8 +396,8 @@ def generate(photo_path=None, out_path=OUT):
         c.setFont("Helvetica", 8.5)
         c.setFillColor(DARK)
         c.drawString(BODY_X, y - 6, ln)
-        y -= 11
-    y -= 8
+        y -= 10
+    y -= 3
 
     # ── EXPERIENCE ────────────────────────────────────────────────────────────
     y = section_header(c, BODY_X, y, BODY_W, "PROFESSIONAL EXPERIENCE")
@@ -394,17 +413,17 @@ def generate(photo_path=None, out_path=OUT):
         c.setFont("Helvetica", 7.5)
         c.setFillColor(GRAY)
         c.drawString(BODY_X + BODY_W - rw, y, right)
-        y -= 12
+        y -= 11
 
         # Role (italic teal)
         c.setFont("Helvetica-Oblique", 9)
         c.setFillColor(TEAL)
         c.drawString(BODY_X, y, exp["role"])
-        y -= 12
+        y -= 11
 
         for b in exp["bullets"]:
             y = bullet(c, BODY_X, y, b, BODY_W)
-        y -= 6
+        y -= 2
 
     # ── EDUCATION ─────────────────────────────────────────────────────────────
     y = section_header(c, BODY_X, y, BODY_W, "EDUCATION")
@@ -423,9 +442,7 @@ def generate(photo_path=None, out_path=OUT):
         c.setFont("Helvetica-Oblique", 9)
         c.setFillColor(TEAL)
         c.drawString(BODY_X, y, edu["degree"])
-        y -= 16
-
-    y -= 2
+        y -= 14
 
     # ── SKILLS & LANGUAGES ────────────────────────────────────────────────────
     y = section_header(c, BODY_X, y, BODY_W, "SKILLS & LANGUAGES")
@@ -447,21 +464,58 @@ def generate(photo_path=None, out_path=OUT):
             else:
                 y -= 11
                 c.drawString(BODY_X + lw, y - 6, ln)
-        y -= 12
+        y -= 11
 
-    y -= 4
+    y -= 2
 
     # ── ADDITIONAL ────────────────────────────────────────────────────────────
+    additional_lines = wrap(c, ADDITIONAL, "Helvetica", 8.5, BODY_W)
+    # Estimate space needed: section header (~16) + lines * 11 + padding
+    space_needed = 16 + len(additional_lines) * 11 + 6
+    if y - space_needed < BOTTOM_MARGIN:
+        print(
+            f"  [layout] WARNING: ADDITIONAL section needs ~{space_needed:.0f}pt but only "
+            f"{y - BOTTOM_MARGIN:.0f}pt remain — content will be clipped.",
+            file=sys.stderr,
+        )
+
     y = section_header(c, BODY_X, y, BODY_W, "ADDITIONAL")
-    for ln in wrap(c, ADDITIONAL, "Helvetica", 8.5, BODY_W):
+    clipped = False
+    for ln in additional_lines:
+        if y - 6 < BOTTOM_MARGIN:
+            clipped = True
+            break
         c.setFont("Helvetica", 8.5)
         c.setFillColor(DARK)
         c.drawString(BODY_X, y - 6, ln)
         y -= 11
 
     c.save()
-    print(f"CV saved -> {out_path}")
+
+    # ── Post-generation layout report ─────────────────────────────────────────
+    _report_layout(out_path, y, clipped)
+
     return out_path
+
+
+def _report_layout(out_path, final_y, clipped):
+    """Print a layout summary after PDF generation."""
+    margin_pts = BOTTOM_MARGIN
+    remaining  = final_y - margin_pts
+    status     = "OK" if (remaining >= 0 and not clipped) else "WARNING"
+
+    print(f"\n{'='*52}")
+    print(f"  Layout report: {out_path}")
+    print(f"{'='*52}")
+    if clipped:
+        print("  [FAIL] ADDITIONAL section was clipped — content did not fit.")
+        print("         Shorten the ADDITIONAL text or reduce other sections.")
+    elif remaining < 0:
+        print(f"  [FAIL] Content overflowed page by {-remaining:.1f}pt ({-remaining/mm:.1f}mm).")
+        print("         Reduce content or tighten line spacing.")
+    else:
+        print(f"  [{status}]  Final y = {final_y:.1f}pt — {remaining:.1f}pt ({remaining/mm:.1f}mm) above bottom margin.")
+    print(f"{'='*52}\n")
 
 
 # ── Entry point ────────────────────────────────────────────────────────────────

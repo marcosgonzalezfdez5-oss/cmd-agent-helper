@@ -2,38 +2,39 @@
   "ats_keywords": [
     "AI",
     "automation",
-    "Python",
-    "software engineering",
-    "AI automation",
-    "data architecture",
-    "digital twin",
-    "manufacturing",
-    "electrical design",
-    "engineering",
-    "system architecture",
-    "scalable",
-    "production",
-    "industrial",
-    "startup"
+    "workflow",
+    "process",
+    "analytical",
+    "structured",
+    "German",
+    "English",
+    "project management",
+    "documentation",
+    "RPA",
+    "Low-Code",
+    "consulting",
+    "testing",
+    "bot"
   ],
   "required_skills": [
-    "Python",
     "AI",
     "automation",
-    "software engineering",
-    "engineering",
-    "system architecture",
-    "data architecture",
-    "scalable"
+    "workflow",
+    "analytical",
+    "structured",
+    "German",
+    "English",
+    "consulting",
+    "project management"
   ],
   "culture_signals": [
-    "analytical",
-    "builder",
-    "problem solving",
-    "scalable",
     "innovative",
-    "international"
+    "collaborative",
+    "analytical",
+    "adaptability",
+    "communication",
+    "leadership"
   ],
-  "seniority_score": 88,
-  "seniority_note": "Junior/recent graduate role targeting 0-2 years experience; Marcos is a 2025 BSc Software Engineering graduate with junior-level AI and automation project experience — perfect seniority alignment."
+  "seniority_score": 80,
+  "seniority_note": "Very entry-level Junior Automation Consultant role targeting graduates who have built things independently (automations, bots, scripts, AI experiments). No years-of-experience requirement. Candidate has BSc SE First Class Honours, end-to-end AI automation across 20 manufacturing sites (Stumpp Schuele), agentic AI platform (Meerkats AI), AI evaluation contractor (Browserbase), and an independently built AI agent (additional experience). The 'built things yourself' framing matches well. Gaps: no RPA (UiPath/Blue Prism) or Low-Code platform experience, no consulting background, German B2 vs. 'sehr gute Deutschkenntnisse' requirement. Company is a family business with 65+ years — culture match (analytical, structured, team-oriented) is strong."
 }

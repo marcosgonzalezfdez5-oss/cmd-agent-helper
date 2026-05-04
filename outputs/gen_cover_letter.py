@@ -23,39 +23,35 @@ PHONE    = "+34 603786521"
 EMAIL    = "marcos.gonzalezfdez5@gmail.com"
 LINKEDIN = "linkedin.com/in/marcos-gonzalez-fdez5/"
 
-COMPANY  = "Vetaion GmbH"
-ADDRESS  = "Garching, Munich"
-DATE_STR = "28 April 2026"
-ROLE     = "AI Automation Engineer"
+COMPANY  = "[COMPANY NAME]"
+ADDRESS  = "[LOCATION]"
+DATE_STR = "4th of May, 2026"
+ROLE     = "Junior Automation Consultant"
 START    = "As soon as possible"
-SALUT    = "Vetaion Team"
+SALUT    = "Hiring Team"
+
 
 BODY = [
     (
-        "At Stumpp Schuele & Somappa Springs, I built and shipped an AI automation platform for "
-        "20 manufacturing plants. Not a prototype — a live system running across production "
-        "facilities in India, built in Python and SQL, with data architecture I designed and a "
-        "backend I wrote end to end. When I read what Vetaion is building, that project is the "
-        "closest thing I have done to it."
+        "Before applying to this role, I built an AI automation bot to automate my own job application process - "
+        "researching job descriptions, generating tailored documents, and delivering output end to end. That is not "
+        "a side experiment. It runs in production and produces results. That is also how I approach every process: "
+        "find the manual work, understand it, and build the automated replacement."
     ),
     (
-        "At Browserbase, I evaluated over 600 AI systems under production conditions. That work "
-        "gave me a clear understanding of where AI holds up and where it does not — which matters "
-        "when you are building automation that real manufacturing lines depend on. Combined with "
-        "the Stumpp Schuele deployment, I can point to shipped systems in both AI evaluation and "
-        "AI automation. I write Python, SQL, and JavaScript. I have owned data architecture, "
-        "automated pipelines, and multi-site IT integration from specification to go-live."
+        "At Stumpp Schuele, I designed and deployed an AI automation platform across 20 manufacturing sites. "
+        "Requirements, architecture, development, testing, go-live - owned without hand-offs, resulting in a 40% "
+        "operational efficiency improvement. At Meerkats AI, I built agentic workflows from scratch in a startup, "
+        "mapping manual operations and replacing them with automated processes running against real business data."
     ),
     (
-        "I want this role because of the scope. Building the AI layer of a manufacturing OS from "
-        "0 to 1, at a company rethinking how control cabinets get made, is the kind of technically "
-        "hard problem I am looking for. The electrical design and EPLAN side is new to me, but "
-        "picking up an unfamiliar technical domain quickly is something I have done in every role "
-        "so far. My BSc in Software Engineering (First Class Honours, Lancaster University), "
-        "combined with hands-on experience across five countries, means I contribute from day one."
+        "What draws me to this role specifically is the development path: joining an Innovation & Technology team, "
+        "working on real projects from day one, and growing into the Automation Consultant role step by step. "
+        "Analytical and structured by default, I learn fast and build independently. I am looking for an environment "
+        "where the work is real and the growth is genuine."
     ),
     (
-        "I would welcome the chance to discuss this at your Garching office."
+        "I would welcome the chance to discuss the role in more detail."
     ),
 ]
 
@@ -112,7 +108,7 @@ story.append(Paragraph(COMPANY, base))
 story.append(Paragraph(ADDRESS, base))
 story.append(Paragraph(DATE_STR, base))
 story.append(Paragraph("&nbsp;", base))
-story.append(Paragraph(f"<b>Application for {ROLE} — Start date: {START}</b>", base))
+story.append(Paragraph(f"<b>Application for {ROLE} - Start date: {START}</b>", base))
 story.append(Paragraph("&nbsp;", base))
 story.append(Paragraph(f"Dear {SALUT},", base))
 story.append(Paragraph("&nbsp;", base))

@@ -1,46 +1,48 @@
 {
-  "overall": 87,
+  "overall": 82,
   "keyword_match": {
     "score": 66.7,
     "matched": [
       "AI",
       "automation",
-      "Python",
-      "software engineering",
-      "AI automation",
-      "data architecture",
-      "manufacturing",
-      "engineering",
-      "system architecture",
-      "scalable"
+      "workflow",
+      "process",
+      "analytical",
+      "structured",
+      "German",
+      "English",
+      "project management",
+      "documentation"
     ],
     "missing": [
-      "digital twin",
-      "electrical design",
-      "production",
-      "industrial",
-      "startup"
+      "RPA",
+      "Low-Code",
+      "consulting",
+      "testing",
+      "bot"
     ],
     "total": 15
   },
   "required_skills": {
-    "score": 100.0,
+    "score": 88.9,
     "matched": [
-      "Python",
       "AI",
       "automation",
-      "software engineering",
-      "engineering",
-      "system architecture",
-      "data architecture",
-      "scalable"
+      "workflow",
+      "analytical",
+      "structured",
+      "German",
+      "English",
+      "project management"
     ],
-    "missing": [],
-    "total": 8
+    "missing": [
+      "consulting"
+    ],
+    "total": 9
   },
   "seniority": {
-    "score": 88.0,
-    "note": "Junior/recent graduate role targeting 0-2 years experience; Marcos is a 2025 BSc Software Engineering graduate with junior-level AI and automation project experience \u2014 perfect seniority alignment."
+    "score": 80.0,
+    "note": "Very entry-level Junior Automation Consultant role targeting graduates who have built things independently (automations, bots, scripts, AI experiments). No years-of-experience requirement. Candidate has BSc SE First Class Honours, end-to-end AI automation across 20 manufacturing sites (Stumpp Schuele), agentic AI platform (Meerkats AI), AI evaluation contractor (Browserbase), and an independently built AI agent (additional experience). The 'built things yourself' framing matches well. Gaps: no RPA (UiPath/Blue Prism) or Low-Code platform experience, no consulting background, German B2 vs. 'sehr gute Deutschkenntnisse' requirement. Company is a family business with 65+ years \u2014 culture match (analytical, structured, team-oriented) is strong."
   },
   "structure": {
     "score": 100.0,
@@ -56,12 +58,12 @@
   "culture": {
     "score": 100.0,
     "matched": [
-      "analytical",
-      "builder",
-      "problem solving",
-      "scalable",
       "innovative",
-      "international"
+      "collaborative",
+      "analytical",
+      "adaptability",
+      "communication",
+      "leadership"
     ],
     "missing": [],
     "total": 6
