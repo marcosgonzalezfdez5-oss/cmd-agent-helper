@@ -4,9 +4,9 @@ from reportlab.pdfgen import canvas
 from reportlab.lib import colors
 from reportlab.platypus import Paragraph, Frame
 from reportlab.lib.styles import ParagraphStyle
-from reportlab.lib.enums import TA_JUSTIFY, TA_CENTER, TA_LEFT
+from reportlab.lib.enums import TA_JUSTIFY, TA_LEFT
 
-OUT = r"C:\Users\Marcos\Documents\Projects\cmd-agent-helper\outputs\cover_letter.pdf"
+OUT = r"C:\Users\Marcos\OneDrive\Documents\Projects\cmd-agent-helper\outputs\cover_letter.pdf"
 
 PAGE_W, PAGE_H = A4
 L_MARGIN  = 25 * mm
@@ -18,40 +18,51 @@ LINK_BLUE = colors.HexColor("#1155CC")
 
 # ── Letter content ──────────────────────────────────────────────────────────
 NAME     = "Marcos Gonzalez Fernandez"
-LOCATION = "Leipzig, Germany"
+LOCATION = "Germany"
 PHONE    = "+34 603786521"
 EMAIL    = "marcos.gonzalezfdez5@gmail.com"
 LINKEDIN = "linkedin.com/in/marcos-gonzalez-fdez5/"
 
-COMPANY  = "[COMPANY NAME]"
-ADDRESS  = "[LOCATION]"
-DATE_STR = "4th of May, 2026"
-ROLE     = "Junior Automation Consultant"
+COMPANY  = "NFS"
+ADDRESS  = "Germany"
+DATE_STR = "18th of May, 2026"
+ROLE     = "Associate Consultant, Financial Services"
 START    = "As soon as possible"
 SALUT    = "Hiring Team"
 
 
 BODY = [
     (
-        "Before applying to this role, I built an AI automation bot to automate my own job application process - "
-        "researching job descriptions, generating tailored documents, and delivering output end to end. That is not "
-        "a side experiment. It runs in production and produces results. That is also how I approach every process: "
-        "find the manual work, understand it, and build the automated replacement."
+        "Software Engineering graduates with an interest in consulting usually stay in tech. "
+        "I want to go the other direction, use the technical and analytical skills in a "
+        "client-facing environment where they shape how financial institutions actually use their data."
     ),
     (
-        "At Stumpp Schuele, I designed and deployed an AI automation platform across 20 manufacturing sites. "
-        "Requirements, architecture, development, testing, go-live - owned without hand-offs, resulting in a 40% "
-        "operational efficiency improvement. At Meerkats AI, I built agentic workflows from scratch in a startup, "
-        "mapping manual operations and replacing them with automated processes running against real business data."
+        "NFS fits. The Bootcamp structure, early responsibility on real client projects, "
+        "and the focus on AI and data-driven transformation in financial services is what "
+        "I am looking for right now."
     ),
     (
-        "What draws me to this role specifically is the development path: joining an Innovation & Technology team, "
-        "working on real projects from day one, and growing into the Automation Consultant role step by step. "
-        "Analytical and structured by default, I learn fast and build independently. I am looking for an environment "
-        "where the work is real and the growth is genuine."
+        "At Stumpp Schuele, I ran end-to-end project management for an automation platform "
+        "across 20 manufacturing plants, coordinating requirements, schedules, and go-lives "
+        "across engineering and operations teams in a multi-site environment. Process efficiency "
+        "improved by 40%. The project ran in both traditional and agile cycles. I wrote the "
+        "roadmap, managed the testing, and ran the launch. No one handed me a plan."
     ),
     (
-        "I would welcome the chance to discuss the role in more detail."
+        "At Carl Zeiss, I built data analytics pipelines and Power BI dashboards to track KPI "
+        "performance during a digital transformation from SAP to Salesforce. The job was "
+        "translating process data into decisions leadership could act on, understanding both "
+        "the technical layer and the business question behind it."
+    ),
+    (
+        "Outside work, I manage a personal investment portfolio using quantitative data analytics. "
+        "25%+ cumulative return. Financial markets have been a genuine area of interest for a "
+        "while, and I want to take that into a professional context."
+    ),
+    (
+        "Based in Leipzig, fully open to relocation and national or international travel. "
+        "German at B2, English at C2."
     ),
 ]
 
@@ -108,7 +119,7 @@ story.append(Paragraph(COMPANY, base))
 story.append(Paragraph(ADDRESS, base))
 story.append(Paragraph(DATE_STR, base))
 story.append(Paragraph("&nbsp;", base))
-story.append(Paragraph(f"<b>Application for {ROLE} - Start date: {START}</b>", base))
+story.append(Paragraph(f"<b>Application for {ROLE}</b>", base))
 story.append(Paragraph("&nbsp;", base))
 story.append(Paragraph(f"Dear {SALUT},", base))
 story.append(Paragraph("&nbsp;", base))

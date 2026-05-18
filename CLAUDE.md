@@ -25,8 +25,9 @@ When a user provides a CV (in this case is a cv.json file which ytou can find in
 2. Calculate ATS score on the current CV first
 3. If ATS score is BELOW 75% → Try to improve by changing words (not inventing experience) but if ATS score is NO MATCH, NO GOOD CHANCE should be return with the appropiate explanation.
 4. If ATS score is 75% or HIGHER → improve wording only (do not invent new data) to further strengthen ATS performance
-5. Use the `humanize` skill to improve natural writing tone while preserving ATS compatibility
-6. Generate final CV PDF + Cover Letter PDF
+5. Generate final CV PDF + Cover Letter PDF
+6. Use the `humanize` skill to improve natural writing tone while preserving ATS compatibility. Specially check the usage of em dashes. 
+6.1 Rewrite both documents
 7. Deliver final optimized application package
 
 You can run any step in isolation if that is all the user needs.

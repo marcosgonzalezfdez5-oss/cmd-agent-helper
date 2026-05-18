@@ -29,7 +29,7 @@ from reportlab.pdfgen import canvas
 
 # ── Output ────────────────────────────────────────────────────────────────────
 OUT      = "cv_Marcos_Gonzalez.pdf"
-PHOTO    = r"C:\Users\Marcos\Documents\Projects\cmd-agent-helper\cv-creating\assets\profile-pic.jpg"
+PHOTO    = r"..\cv-creating\assets\profile-pic.jpg"
 
 # ── Design tokens ─────────────────────────────────────────────────────────────
 TEAL       = colors.HexColor("#4A7FA5")
@@ -234,7 +234,7 @@ def draw_header(c, photo_path=None):
     c.drawString(name_x, name_y - line_gap, name_line2)
 
     # Auto-shrink subtitle so it stays within the teal shape at that y
-    subtitle_text = "AI & Automation  |  End-to-End Process Automation"
+    subtitle_text = "Data Analytics  ·  AI Applications  ·  Project Management  ·  Python  ·  Process Analysis"
     subtitle_y = name_y - line_gap - 15
     avail_sub = _teal_right_edge_at(subtitle_y) - name_x - 4 * mm
     sub_sz = 8.5
@@ -291,25 +291,24 @@ def draw_header(c, photo_path=None):
 # ── CV Data ───────────────────────────────────────────────────────────────────
 
 SUMMARY = (
-    "Software Engineering graduate (First Class Honours, Lancaster University) who builds automation systems. "
-    "Deployed end-to-end AI automation across 20 manufacturing sites at Stumpp Schuele - requirements, architecture, "
-    "development, testing, and go-live owned without hand-offs, achieving 40% operational efficiency improvement. "
-    "Built an agentic AI platform at Meerkats AI, mapping manual processes and replacing them with automated workflows. "
-    "Built an AI automation bot independently to automate own job application process - in production, producing results. "
-    "Applies Gen-AI and scripting to optimize work as a matter of course. Analytical and structured by default. "
-    "English C1, German B2."
+    "Software Engineering graduate (First Class Honours, Lancaster University) with initial practical experience "
+    "in data analytics, AI applications, and project management. At Meerkats AI, builds GTM AI applications and "
+    "automation workflows using Claude Code and Python, 25% improvement in user engagement. At Stumpp Schuele, "
+    "led structured project management for an automation platform across 20 plants, 40% process efficiency gain. "
+    "At Browserbase, conducted 600+ structured LLM evaluations. Pragmatic, analytical, team-oriented. "
+    "German B2, English C2, Spanish native. Open to national and international project work."
 )
 
 EXPERIENCE = [
     {
         "company": "Meerkats AI",
-        "role":    "AI Founder Associate",
+        "role":    "AI Automation Manager Associate",
         "loc":     "Remote",
         "dates":   "Apr 2026 – Present",
         "bullets": [
-            "Built an **agentic AI** automation platform from the ground up in a **startup** environment, engineering multi-step **workflow** automation against real business data and driving a **25%** uplift in user engagement",
-            "Mapped business **workflows**, identified manual processes as **automation** targets, and shipped a **multi-agent** communication system into the founding team's live operations - from idea to MVP",
-            "Applied **AI** and **automation** tools to optimize internal processes, iterating rapidly on outputs and improving reliability across the full deployment lifecycle",
+            "Built **GTM** AI applications and automation workflows using **Claude Code** and **Python** through iterative development cycles; conducted **process analysis** to identify opportunities and incorporated user feedback, **25%** increase in user engagement",
+            "Developed **Python** scripting and **API** integrations for automated **data analytics** pipelines; prototyped scalable solutions and iterated based on structured testing and user feedback",
+            "Operated **autonomously** in a multidisciplinary team; maintained strong **team collaboration** across engineering and product to translate user research into actionable improvements",
         ],
     },
     {
@@ -318,30 +317,29 @@ EXPERIENCE = [
         "loc":     "Bangalore, India",
         "dates":   "Apr 2026 – Present",
         "bullets": [
-            "Designed and deployed an **AI**-powered **automation** platform across **20** manufacturing sites using **Python**, **TypeScript**, and **SQL**; achieved **40%** operational efficiency improvement through systematic **process optimization** of high-volume manual **workflows**",
-            "Mapped manual process bottlenecks across a distributed industrial environment, designed automated replacement systems, and delivered end to end: requirements, architecture, development, **testing**, and **go-live** without hand-offs",
-            "Built automated backend pipelines eliminating manual coordination; **documented** processes, requirements, and architecture for long-term maintainability across the full site network",
+            "Led structured **project management** and deployment of a scalable **automation** platform using **Python**, **SQL**, and system integration across **20** manufacturing plants, **40%** **process efficiency** gain",
+            "Conducted in-depth **process analysis** to identify automation opportunities; developed technical roadmaps and **data analytics** procedures adopted across all sites",
+            "Coordinated requirements, schedule, testing, and go-live activities **autonomously** using traditional and **agile** **project management** methods across a multi-site industrial environment",
         ],
     },
     {
         "company": "Browserbase",
-        "role":    "AI Research Contractor",
+        "role":    "AI Model Evaluation Contractor",
         "loc":     "Remote",
         "dates":   "Feb 2026 – Present",
         "bullets": [
-            "Evaluated **600+ real AI** outputs in production, systematically identifying edge cases and failure modes using **structured analytical** frameworks across diverse real-world use cases",
-            "Developed practical **analytical** intuition for how frontier **AI** models perform under real conditions, translating findings into **quality** improvement priorities for the development team",
+            "Conducted **600+** structured evaluations of **LLMs** and **machine learning** models; built evaluation frameworks and quality criteria to assess model performance across diverse use cases",
+            "Identified edge cases and failure patterns through systematic **LLM** evaluation; delivered findings to improve **AI** system reliability and data quality",
         ],
     },
     {
         "company": "Carl Zeiss AG",
-        "role":    "Working Student – Data & Analytics",
+        "role":    "Working Student – Data Analytics & Process Improvement",
         "loc":     "Oberkochen, Germany",
         "dates":   "Nov 2024 – Aug 2025",
         "bullets": [
-            "Drove **data-driven** reporting for a global programme by consolidating fragmented Excel and SAP Analytics sources into centralized **data pipelines**, cutting reporting time by **50%**",
-            "Built and maintained a **Power BI** dashboard for global budget tracking, supporting strategic decision-making with automated real-time data integration for international project leadership",
-            "Coordinated a team of 5 interns through shifting project scope, managing priorities and communicating progress to global stakeholders",
+            "Conducted in-depth **process analysis** of reporting workflows; built Power BI dashboards for KPI monitoring, **50%** reduction in reporting time; developed **data analytics** and **process improvement** proposals adopted by international project leadership",
+            "Developed standardised data pipelines **autonomously**; led iterative development cycles for a team of **5** interns using **Agile** methodology with strong **team collaboration**",
         ],
     },
     {
@@ -350,7 +348,7 @@ EXPERIENCE = [
         "loc":     "Oberkochen, Germany",
         "dates":   "Jun 2024 – Aug 2024",
         "bullets": [
-            "Supported a large-scale digital transformation (SAP to Salesforce migration): gathered stakeholder requirements, built Power BI reporting solutions, and delivered data-driven insights enabling informed decisions throughout the transition",
+            "Built Power BI KPI dashboard to monitor NPS and adoption rates during digital transformation from SAP to Salesforce CRM; managed **data analytics** and reporting solutions for international stakeholders",
         ],
     },
 ]
@@ -365,18 +363,18 @@ EDUCATION = [
 ]
 
 SKILLS = {
-    "Automation":    ["Process Automation", "Workflow Design", "Process Optimization", "AI Automation", "Scripting", "Python", "TypeScript", "SQL"],
-    "AI":            ["Agentic AI", "Gen-AI", "LLM Integration", "AI Evaluation", "Prompt Engineering", "Claude"],
-    "Analytics":     ["Power BI", "Microsoft Excel", "SAP Analytics", "Tableau", "Salesforce"],
-    "Technical":     ["Java", "JavaScript", "React", "Next.js", "Git", "Maven", "JUnit (Testing)"],
-    "Languages":     ["Spanish (Native)", "English (C1)", "German (B2)", "French (B1)"],
+    "AI & Data":     ["Claude Code", "AI Applications", "Data Analytics", "LLMs", "Machine Learning", "Python", "SQL", "Power BI"],
+    "Project Mgmt":  ["Project Management", "Agile Methodology", "Process Analysis", "Process Improvement", "Team Collaboration", "Iterative Development"],
+    "Development":   ["Automation Workflows", "Python", "TypeScript", "APIs", "Data Integration", "KPI Monitoring", "Scalable Solutions"],
+    "Languages":     ["Spanish (Native)", "English (C2)", "German (B2)", "French (B1)"],
 }
 
 ADDITIONAL = (
-    "Custom AI Automation Bot (Mar 2026 – Present): built a multi-agent AI bot from scratch to automate own job "
-    "application workflows end to end - document generation, process automation, and scripted output delivery; "
-    "30% increase in interview invitations. Built independently, without existing infrastructure. "
-    )
+    "Investment Portfolio (Mar 2025): manages a stock and ETF portfolio using quantitative data analytics and "
+    "financial analysis, 30%+ cumulative return. "
+    "AI Agent Tool (Mar 2026): built a Claude Code application to automate job applications via agent workflows "
+    ", 30% increase in interview invitations."
+)
 
 
 # ── Main generation ───────────────────────────────────────────────────────────
@@ -423,7 +421,7 @@ def generate(photo_path=None, out_path=OUT):
 
         for b in exp["bullets"]:
             y = bullet(c, BODY_X, y, b, BODY_W)
-        y -= 2
+        y -= 10
 
     # ── EDUCATION ─────────────────────────────────────────────────────────────
     y = section_header(c, BODY_X, y, BODY_W, "EDUCATION")
